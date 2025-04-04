@@ -1,0 +1,11 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Sebastian'Confidence Score: 0.850Position: 166-175Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Sebastian'Confidence Score: 0.850Position: 229-238Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Kendrick Lamar'Confidence Score: 0.850Position: 2467-2481Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Kendrick Lamar'Confidence Score: 0.850Position: 2580-2594Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Kendrick Lamar'Confidence Score: 0.850Position: 2838-2852Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Blacker'Confidence Score: 0.850Position: 3066-3073Replacement: '[PERSON]'------------------------------

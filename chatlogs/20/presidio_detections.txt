@@ -1,0 +1,13 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Hobbies'Confidence Score: 0.850Position: 358-365Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Blossom'Confidence Score: 0.850Position: 622-629Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Blossom'Confidence Score: 0.850Position: 795-802Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Blossom'Confidence Score: 0.850Position: 976-983Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Paris'Confidence Score: 0.850Position: 1948-1953Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'coquette'Confidence Score: 0.850Position: 2104-2112Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Zedd'Confidence Score: 0.850Position: 2798-2802Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Dabin'Confidence Score: 0.850Position: 2861-2866Replacement: '[PERSON]'------------------------------

@@ -1,0 +1,6 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+No entities detected above confidence threshold.

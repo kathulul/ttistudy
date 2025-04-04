@@ -1,0 +1,7 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Thomas Costello's'Confidence Score: 0.850Position: 2976-2993Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Thomas Costello'Confidence Score: 0.850Position: 3323-3338Replacement: '[PERSON]'------------------------------

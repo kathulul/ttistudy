@@ -1,0 +1,6 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Neuroanatomy'Confidence Score: 0.850Position: 1159-1171Replacement: '[PERSON]'------------------------------

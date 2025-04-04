@@ -1,0 +1,15 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Fairy Tail'Confidence Score: 0.850Position: 2252-2262Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Death Note'Confidence Score: 0.850Position: 2354-2364Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Death Note'Confidence Score: 0.850Position: 2864-2874Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Death Note'Confidence Score: 0.850Position: 3023-3033Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Tokuchi'Confidence Score: 0.850Position: 3205-3212Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Light Yagami'Confidence Score: 0.850Position: 3232-3244Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'kuroko'Confidence Score: 0.850Position: 3376-3382Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Haikyuu'Confidence Score: 0.850Position: 3561-3568Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Haikyuu'Confidence Score: 0.850Position: 3890-3897Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Haikyuu'Confidence Score: 0.850Position: 4003-4010Replacement: '[PERSON]'------------------------------

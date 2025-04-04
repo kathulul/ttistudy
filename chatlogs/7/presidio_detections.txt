@@ -1,0 +1,22 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Yo'Confidence Score: 0.850Position: 4455-4457Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'China'Confidence Score: 0.850Position: 5059-5064Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'japan'Confidence Score: 0.850Position: 5076-5081Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'China'Confidence Score: 0.850Position: 5335-5340Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 5345-5350Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 5604-5609Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Shibuya'Confidence Score: 0.850Position: 5743-5750Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'New Zealand'Confidence Score: 0.850Position: 5844-5855Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'China'Confidence Score: 0.850Position: 5927-5932Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'chongqing'Confidence Score: 0.850Position: 6115-6124Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Yooo'Confidence Score: 0.850Position: 6181-6185Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Chongqing'Confidence Score: 0.850Position: 6191-6200Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Blade Runner'Confidence Score: 0.850Position: 6363-6375Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'China'Confidence Score: 0.850Position: 6594-6599Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Shanghai'Confidence Score: 0.850Position: 6614-6622Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Beijing'Confidence Score: 0.850Position: 6626-6633Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Chongqing'Confidence Score: 0.850Position: 6644-6653Replacement: '[LOCATION]'------------------------------
