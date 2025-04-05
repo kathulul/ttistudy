@@ -1,0 +1,42 @@
+# Virtual Environment
+venv/
+env/
+.env/
+
+# Python packages and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# spaCy models
+**/en_core_web_*/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Local development settings
+.env
+.env.local
+*.log
+
+# Data files (if you don't want to track them)
+# Uncomment if needed:
+# *.csv
+# *.json
