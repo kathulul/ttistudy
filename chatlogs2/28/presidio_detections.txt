@@ -1,0 +1,55 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'George Orwell'Confidence Score: 0.850Position: 1938-1951Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Winston'Confidence Score: 0.850Position: 2455-2462Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'o brien'Confidence Score: 0.850Position: 2769-2776Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Celie'Confidence Score: 0.850Position: 3783-3788Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Shug'Confidence Score: 0.850Position: 3932-3936Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'The Color Purple'Confidence Score: 0.850Position: 3999-4015Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'shug'Confidence Score: 0.850Position: 4047-4051Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'celie'Confidence Score: 0.850Position: 4138-4143Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Shug'Confidence Score: 0.850Position: 4207-4211Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Shug'Confidence Score: 0.850Position: 4592-4596Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Shug'Confidence Score: 0.850Position: 4739-4743Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Celie'Confidence Score: 0.850Position: 4851-4856Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Celie'Confidence Score: 0.850Position: 5059-5064Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Celie'Confidence Score: 0.850Position: 5111-5116Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Celie'Confidence Score: 0.850Position: 5395-5400Replacement: '[PERSON]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+Entity Type: GENDER_TERMDetected Text: 'woman'Position: 5525-5530Replacement: 'person'------------------------------
+Entity Type: GENDER_TERMDetected Text: 'girl'Position: 5494-5498Replacement: 'person'------------------------------
+PRONOUN REPLACEMENTS
+==================================================
+
+Entity Type: PRONOUNDetected Text: 'he'Position: 2445-2447Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'he'Position: 2561-2563Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'he'Position: 2870-2872Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'she'Position: 3905-3908Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'she'Position: 4858-4861Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'she'Position: 5047-5050Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'she'Position: 5277-5280Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'him'Position: 2610-2613Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 3836-3839Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 4116-4119Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 4331-4334Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 4791-4794Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 4882-4885Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 5003-5006Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 5138-5141Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 5418-5421Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 5569-5572Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 5578-5581Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 5642-5645Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 5774-5777Replacement: 'them'------------------------------
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 14 replacements
+LOCATION: 1 replacements

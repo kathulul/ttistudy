@@ -1,0 +1,44 @@
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+- Got it! Hey there, how's it going?
+I'm okay Alhamdulillah, how are you? 
+- Alhamdulillah, I'm doing well too. Glad to hear you're okay! How's your day been so far?
+It's been slow, I recently got the flu so not as much energy today.
+- That sounds like a good plan. Hot drinks definitely help, especially with a sore throat. Have you tried honey and lemon in warm water? That combo always feels soothing.
+Yes, I add it to some [ETHNICITY] tea. What about you?
+- That sounds perfect--[ETHNICITY] tea with honey and lemon is a solid choice. If I were under the weather, I'd probably go for the same thing or maybe some ginger tea. Ginger has that nice warmth to it that helps clear up congestion.
+
+Are you managing to get enough rest, or is the flu messing with your sleep?
+Definitely messing with it because i usually sleep really well
+- Yeah, that's the worst--when you're exhausted but can't get proper rest. Maybe some steam inhalation before bed could help a little, especially if congestion is part of the problem.
+
+Do you usually have a nighttime routine that helps you sleep, or is it just natural for you?
+Hmmm not really
+- That's lucky! Some people have to do a whole routine just to get decent sleep. Hopefully, once the flu passes, you'll be back to sleeping normally.
+
+Are you the type to binge-watch something while resting, or do you prefer just lying down and listening to something?
+Both, depending on what I'm watching/ listening to!! Have you been watching anything interesting recently?
+- That makes sense--sometimes you want to focus, and other times you just need something in the background.
+
+Lately, I've been into mystery and thriller shows. There's something about a good plot twist that keeps me hooked. What about you? Do you have a go-to genre when you're not feeling well?
+What's a good mystery/ thriller?? Ive been trying to venture into that genre. Rn im re-watching blue lock, and fairytale 
+- Nice choices! Blue Lock is intense--definitely not your typical sports anime. And [PERSON] is such a classic.
+
+For mystery/thriller, if you want something with psychological twists, [PERSON] is a must-watch (if you haven't already). If you're looking for more action-packed mystery, Psycho-Pass has a great mix of detective work and futuristic crime-solving. And if you're okay with something a bit slower but super gripping, Monster is an incredible psychological thriller that keeps you on edge.
+
+Would you prefer something anime or live-action?
+I lovedd deathnote, monster got a bit boring for me, I've been meaning to watch psycho pass tho! Thanks for the recommendations
+- Good taste! [PERSON] is a classic for a reason. And yeah, Monster is definitely a slow burn--not for everyone. But Psycho-Pass should be right up your alley if you liked [PERSON]; it's got that mix of morality, crime, and mind games.
+
+Since you're into Blue Lock, have you watched One Outs? It's technically a baseball anime, but the main character, [PERSON], gives off serious [PERSON] vibes with how they outsmarts everyone. It's more of a psychological battle than a sports anime. You might like it!
+No but I watched [PERSON]'s basketball
+- [ENTITY]'s Basketball is such a fun ride! The teamwork and the intense matches make it one of those sports animes you can get really invested in. If you liked that, [PERSON]!! is another great sports anime, but with volleyball. It has that same high-energy vibe with a focus on teamwork and growth.
+
+As for One Outs, if you're into clever strategies and mind games, it might be an interesting change of pace from the more team-focused sports shows.
+
+Do you tend to watch anime subbed or dubbed?
+[PERSON] was too boring for me im sorry, but I prefer subbed unless there's a really well done dub.
+- No worries, [PERSON]!! isn't for everyone--some people find the pacing a bit slow. It's all about what clicks with you! And I totally get the preference for subbed anime; it's usually the best way to experience the original voice acting and emotion. There are some really solid dubs out there, though.
+
+Since you're into mystery/thriller, you might enjoy Steins;Gate. It's a psychological thriller with a lot of twists, and it's highly praised for both its plot and characters. Plus, the dub for it is one of the better ones, if you're ever in the mood for that.
+
+Anything specific you're in the mood for next, genre-wise?

@@ -1,0 +1,35 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 380-383Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 506-509Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 1146-1149Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 1447-1450Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 1579-1582Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 2265-2268Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 2576-2579Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 2789-2792Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'charlie
+
+ChatGPT'Confidence Score: 0.850Position: 3721-3737Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 3749-3752Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'charlie
+
+ChatGPT'Confidence Score: 0.850Position: 4003-4019Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 4323-4326Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'charlie'Confidence Score: 0.850Position: 4691-4698Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bob'Confidence Score: 0.850Position: 4724-4727Replacement: '[PERSON]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 14 replacements

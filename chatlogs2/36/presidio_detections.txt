@@ -1,0 +1,19 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Alex'Confidence Score: 0.850Position: 514-518Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Sam'Confidence Score: 0.850Position: 522-525Replacement: '[PERSON]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 2 replacements

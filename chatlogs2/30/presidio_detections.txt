@@ -1,0 +1,47 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Guy'Confidence Score: 0.850Position: 2444-2447Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Google Drive'Confidence Score: 0.850Position: 5218-5230Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Chill Reads'Confidence Score: 0.850Position: 6880-6891Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Oliver Sacks'Confidence Score: 0.850Position: 6970-6982Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Robert Sapolsky'Confidence Score: 0.850Position: 6995-7010Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'David Eagleman'Confidence Score: 0.850Position: 7074-7088Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Shutter Island'Confidence Score: 0.850Position: 7928-7942Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'newfoundland'Confidence Score: 0.850Position: 8856-8868Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 8945-8957Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Quidi Vidi'Confidence Score: 0.850Position: 9488-9498Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Bowring Park'Confidence Score: 0.850Position: 9500-9512Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: '🐟'Confidence Score: 0.850Position: 10108-10109Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Sean Carroll'Confidence Score: 0.850Position: 10324-10336Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Hometown Glow'Confidence Score: 0.850Position: 10498-10511Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 11230-11242Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Daydream'Confidence Score: 0.850Position: 11433-11441Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 12090-12102Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Bluetooth'Confidence Score: 0.850Position: 12545-12554Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Sing King'Confidence Score: 0.850Position: 13761-13770Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Karafun'Confidence Score: 0.850Position: 13774-13781Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Canada'Confidence Score: 0.850Position: 16050-16056Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Celine Dion'Confidence Score: 0.850Position: 16685-16696Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: '😏'Confidence Score: 0.850Position: 16768-16769Replacement: '[PERSON]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+Entity Type: GENDER_TERMDetected Text: 'Man'Position: 6932-6935Replacement: 'person'------------------------------
+Entity Type: GENDER_TERMDetected Text: 'Girl'Position: 2435-2439Replacement: 'person'------------------------------
+Entity Type: GENDER_TERMDetected Text: 'Girl'Position: 13826-13830Replacement: 'person'------------------------------
+Entity Type: GENDER_TERMDetected Text: 'King'Position: 13766-13770Replacement: '[ENTITY]'------------------------------
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: ETHNICITYDetected Text: 'White'Position: 2322-2327Replacement: '[ETHNICITY]'------------------------------
+Entity Type: ETHNICITYDetected Text: 'Black'Position: 7896-7901Replacement: '[ETHNICITY]'------------------------------
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 14 replacements
+LOCATION: 9 replacements

@@ -1,0 +1,25 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Thomas Costello's'Confidence Score: 0.850Position: 2976-2993Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Thomas Costello'Confidence Score: 0.850Position: 3323-3338Replacement: '[PERSON]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+Entity Type: PRONOUNDetected Text: 'he'Position: 3635-3637Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'he'Position: 4500-4502Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'he'Position: 4826-4828Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'he'Position: 4867-4869Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'his'Position: 3115-3118Replacement: 'their'------------------------------
+Entity Type: PRONOUNDetected Text: 'his'Position: 5211-5214Replacement: 'their'------------------------------
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 2 replacements

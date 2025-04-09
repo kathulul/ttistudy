@@ -1,0 +1,18 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+No Presidio entities detected above confidence threshold.
+
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================

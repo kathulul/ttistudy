@@ -1,0 +1,48 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: '🥶'Confidence Score: 0.850Position: 95-96Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: '🧣'Confidence Score: 0.850Position: 249-250Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Beach'Confidence Score: 0.850Position: 821-826Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Hawaii'Confidence Score: 0.850Position: 1339-1345Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'London'Confidence Score: 0.850Position: 1367-1373Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Hawaii'Confidence Score: 0.850Position: 1483-1489Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'London'Confidence Score: 0.850Position: 1513-1519Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: '🌴🏙️'Confidence Score: 0.850Position: 1577-1580Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1636-1641Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Italy'Confidence Score: 0.850Position: 1668-1673Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'New Zealand'Confidence Score: 0.850Position: 1701-1712Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Iceland'Confidence Score: 0.850Position: 1749-1756Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Hawaii'Confidence Score: 0.850Position: 1819-1825Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'London'Confidence Score: 0.850Position: 1830-1836Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Hawaii'Confidence Score: 0.850Position: 1941-1947Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'UK'Confidence Score: 0.850Position: 2003-2005Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Hawaii'Confidence Score: 0.850Position: 2103-2109Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Oxford'Confidence Score: 0.850Position: 2128-2134Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Oxford'Confidence Score: 0.850Position: 2526-2532Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'Veni'Confidence Score: 0.850Position: 3965-3969Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'vici'Confidence Score: 0.850Position: 3977-3981Replacement: '[PERSON]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Canada'Confidence Score: 0.850Position: 4231-4237Replacement: '[LOCATION]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: NATIONALITYDetected Text: 'Japan'Position: 1636-1641Replacement: '[NATIONALITY]'------------------------------
+Entity Type: NATIONALITYDetected Text: 'Japanese'Position: 3833-3841Replacement: '[NATIONALITY]'------------------------------
+Entity Type: NATIONALITYDetected Text: 'French'Position: 4085-4091Replacement: '[NATIONALITY]'------------------------------
+Entity Type: NATIONALITYDetected Text: 'Canadian'Position: 4113-4121Replacement: '[NATIONALITY]'------------------------------
+Entity Type: NATIONALITYDetected Text: 'French'Position: 4143-4149Replacement: '[NATIONALITY]'------------------------------
+Entity Type: NATIONALITYDetected Text: 'French'Position: 4362-4368Replacement: '[NATIONALITY]'------------------------------
+Entity Type: LOCATIONDetected Text: 'northern'Position: 1768-1776Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Latin'Position: 3913-3918Replacement: '[LOCATION]'------------------------------
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 5 replacements
+LOCATION: 17 replacements

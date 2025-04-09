@@ -1,0 +1,23 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Neurobio'Confidence Score: 0.850Position: 589-597Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Neuroanatomy'Confidence Score: 0.850Position: 931-943Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'bryson tiller'Confidence Score: 0.850Position: 2836-2849Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'brent faiyaz'Confidence Score: 0.850Position: 2851-2863Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Bryson Tiller'Confidence Score: 0.850Position: 3104-3117Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Brent Faiyaz'Confidence Score: 0.850Position: 3119-3131Replacement: '[PERSON]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 6 replacements

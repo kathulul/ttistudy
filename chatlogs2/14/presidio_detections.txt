@@ -1,0 +1,28 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Yo'Confidence Score: 0.850Position: 343-345Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Tus Lagrimas'Confidence Score: 0.850Position: 1830-1842Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Mora'Confidence Score: 0.850Position: 1846-1850Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Sech'Confidence Score: 0.850Position: 1856-1860Replacement: '[PERSON]'------------------------------
+Entity Type: PERSONDetected Text: 'Tus Lagrimas'Confidence Score: 0.850Position: 1965-1977Replacement: '[PERSON]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: ETHNICITYDetected Text: 'Latino'Position: 1187-1193Replacement: '[ETHNICITY]'------------------------------
+Entity Type: ETHNICITYDetected Text: 'Latino'Position: 1293-1299Replacement: '[ETHNICITY]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Latino'Position: 1187-1193Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Latino'Position: 1293-1299Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Latin'Position: 2576-2581Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Latin'Position: 2899-2904Replacement: '[LOCATION]'------------------------------
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 5 replacements

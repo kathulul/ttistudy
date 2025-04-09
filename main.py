@@ -51,6 +51,9 @@ GENDER_TERM_REPLACEMENTS = {
     r'\b(son|daughter)\b': 'child',
     r'\b(mother|father)\b': 'parent',
     r'\b(gay|lesbian)\b': 'queer',
+    r'\b(boyfriend|girlfriend)\b': 'partner',
+    r'\b(king|queen)\b': '[ENTITY]',
+    r'\b(lord|lady)\b': 'person',
 }
 
 # Cache compiled patterns
@@ -76,6 +79,15 @@ COMPILED_UNWANTED_PATTERNS = [
     re.compile(pattern) for pattern in UNWANTED_PATTERNS
 ]
 
+NATIONALITY_ETHNICITY_TERMS = {
+    # Nationalities and their derivatives (-ish, -ic, -ese, -i, -ian, etc.)
+    r'\b(?:American(?:ized?)?|Canadian|French|Brit(?:ish|ain)|German(?:ic)?|Italian(?:ate)?|Span(?:ish|iard)|Mexic(?:an|o)|Brazil(?:ian)?|Chin(?:ese|a)|Japan(?:ese)?|Korean?|Ind(?:ian|ic)|Russ(?:ian?)|Austral(?:ian?)|Ir(?:ish|eland)|Scot(?:tish|land)|Welsh|Dutch|Pol(?:ish|and)|Swed(?:ish|en)|Norweg(?:ian)?|Dan(?:ish)|Finn(?:ish)|Turk(?:ish)?|Greek?|Portugal|Portuguese|Vietnam(?:ese)?|Thai(?:land)?|Filip(?:ino)?|Indonesia(?:n)?|Malay(?:sian)?|Niger(?:ian)?|Kenya(?:n)?|Ethiopia(?:n)?|Egypt(?:ian)?|Iran(?:ian)?|Iraq(?:i)?|Saudi|Israel(?:i)?)\b': '[NATIONALITY]',
+    # Ethnic/Racial terms and derivatives
+    r'\b(?:Lat(?:in[oa]|inx)|Hispanic|Asian?|Caucasian|White|Black|African?|Europe(?:an)?|Middle[- ]Eastern|Pacific Islander|Native American|Indigenous|Aborig(?:inal|ine)|Inuit|Muslim|Christian|Hindu|Buddhist|Sikh|Jain|Zoroastrian|Jewish|Muslim|Christian|Hindu|Buddhist|Sikh|Jain|Zoroastrian)\b': '[ETHNICITY]',
+    # Regional identifiers and derivatives
+    r'\b(?:West(?:ern)?|East(?:ern)?|North(?:ern)?|South(?:ern)?|Mediterranean|Nord(?:ic)?|Balt(?:ic)?|Slav(?:ic)?|Anglo(?:-.*)?|Celt(?:ic)?|German(?:ic)?|Latin[oa]?|Asia(?:n|tic)?|Afric(?:an)?|Europe(?:an)?|America(?:n)?)\b': '[LOCATION]',
+}
+
 def validate_input(text: str, function_name: str) -> None:
     """Validate input text."""
     if not isinstance(text, str):
@@ -83,23 +95,11 @@ def validate_input(text: str, function_name: str) -> None:
     if not text.strip():
         raise ValueError(f"{function_name}: Input cannot be empty")
 
-def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> str:
+def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tuple[str, dict]:
     """
-    Analyzes text with Presidio and returns a formatted detection log.
-    
-    Args:
-        text (str): Text to analyze
-        confidence_threshold (float): Minimum confidence score for detections (0.0 to 1.0)
-    
-    Returns:
-        str: Formatted detection log
-    
-    Raises:
-        ValueError: If input is invalid
-        Exception: If Presidio analysis fails
+    Analyzes text with Presidio and regex patterns, returns formatted detection log.
     """
     try:
-        # Validate input
         validate_input(text, "log_presidio_detections")
         
         if not 0 <= confidence_threshold <= 1:
@@ -112,7 +112,11 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> str
         log_buffer.write(f"Confidence Threshold: {confidence_threshold}\n")
         log_buffer.write("=" * 50 + "\n")
         
-        # Analyze text for all entities using module-level analyzer
+        # Create dictionary to store detected entities
+        detected_entities = defaultdict(set)
+        replacement_counts = defaultdict(int)
+        
+        # 1. Presidio Detections
         results = ANALYZER.analyze(
             text=text,
             entities=ENTITY_TYPES,
@@ -121,13 +125,14 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> str
         
         # Filter and sort results by confidence
         filtered_results = [r for r in results if r.score >= confidence_threshold]
-        filtered_results.sort(key=lambda x: (-x.score, x.start))  # Sort by confidence (desc) and position
+        filtered_results.sort(key=lambda x: (-x.score, x.start))
         
         if not filtered_results:
-            log_buffer.write("\nNo entities detected above confidence threshold.\n")
+            log_buffer.write("\nNo Presidio entities detected above confidence threshold.\n")
         else:
             for result in filtered_results:
                 detected_text = text[result.start:result.end]
+                # Add to detection log
                 log_buffer.write(f"\nEntity Type: {result.entity_type}")
                 log_buffer.write(f"Detected Text: '{detected_text}'")
                 log_buffer.write(f"Confidence Score: {result.score:.3f}")
@@ -135,16 +140,77 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> str
                 if result.entity_type in ENTITY_REPLACEMENTS:
                     log_buffer.write(f"Replacement: '{ENTITY_REPLACEMENTS[result.entity_type]}'")
                 log_buffer.write("-" * 30)
+                
+                # Add to entity dictionary
+                detected_entities[result.entity_type].add(detected_text)
+                replacement_counts[result.entity_type] += 1
         
-        return log_buffer.getvalue()
+        #Gender Term Replacements
+        log_buffer.write("\nGENDER TERM REPLACEMENTS\n")
+        log_buffer.write("=" * 50 + "\n")
+        
+        for pattern, replacement in GENDER_TERM_REPLACEMENTS.items():
+            compiled_pattern = re.compile(pattern, re.IGNORECASE)
+            for match in compiled_pattern.finditer(text):
+                detected_text = match.group(0)
+                start, end = match.span()
+                
+                log_buffer.write(f"\nEntity Type: GENDER_TERM")
+                log_buffer.write(f"Detected Text: '{detected_text}'")
+                log_buffer.write(f"Position: {start}-{end}")
+                log_buffer.write(f"Replacement: '{replacement}'")
+                log_buffer.write("-" * 30)
+                
+        
+        # Add new section for Pronoun Replacements
+        log_buffer.write("\nPRONOUN REPLACEMENTS\n")
+        log_buffer.write("=" * 50 + "\n")
+        
+        for pattern, replacement_func in PRONOUN_REPLACEMENTS.items():
+            compiled_pattern = re.compile(pattern)
+            for match in compiled_pattern.finditer(text):
+                detected_text = match.group(0)
+                start, end = match.span()
+                # Get the actual replacement by calling the lambda function
+                replacement = replacement_func(match)
+                
+                log_buffer.write(f"\nEntity Type: PRONOUN")
+                log_buffer.write(f"Detected Text: '{detected_text}'")
+                log_buffer.write(f"Position: {start}-{end}")
+                log_buffer.write(f"Replacement: '{replacement}'")
+                log_buffer.write("-" * 30)
+        
+        # 3. Nationality/Ethnicity Replacements
+        log_buffer.write("\nNATIONALITY/ETHNICITY REPLACEMENTS\n")
+        log_buffer.write("=" * 50 + "\n")
+        
+        for pattern, replacement in NATIONALITY_ETHNICITY_TERMS.items():
+            compiled_pattern = re.compile(pattern, re.IGNORECASE)
+            for match in compiled_pattern.finditer(text):
+                detected_text = match.group(0)
+                start, end = match.span()
+                
+                log_buffer.write(f"\nEntity Type: {replacement.strip('[]')}")
+                log_buffer.write(f"Detected Text: '{detected_text}'")
+                log_buffer.write(f"Position: {start}-{end}")
+                log_buffer.write(f"Replacement: '{replacement}'")
+                log_buffer.write("-" * 30)
+        
+        # Add statistics section
+        log_buffer.write("\nREPLACEMENT STATISTICS\n")
+        log_buffer.write("=" * 50 + "\n")
+        for entity_type, count in replacement_counts.items():
+            log_buffer.write(f"{entity_type}: {count} replacements\n")
+        
+        return log_buffer.getvalue(), dict(detected_entities)
         
     except Exception as e:
         error_msg = f"Error in log_presidio_detections: {str(e)}"
         raise Exception(error_msg) from e
 
-def clean_chatlog(chatlog: str, confidence_threshold: float = 0.8, progress_callback=None) -> str:
+def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: float = 0.8, progress_callback=None) -> str:
     """
-    Clean chatlog by removing identifiable information and standardizing format.
+    Clean chatlog using both Presidio replacements and removing all instances of detected entities.
     
     Args:
         chatlog (str): The input chatlog text
@@ -161,6 +227,8 @@ def clean_chatlog(chatlog: str, confidence_threshold: float = 0.8, progress_call
     Raises:
         ValueError: If input is invalid or empty
         RuntimeError: If cleaning process fails
+        detected_entities (dict): Dictionary of detected entities to remove
+        confidence_threshold (float): Minimum confidence score for entity detection
     """
     try:
         validate_input(chatlog, "clean_chatlog")
@@ -168,12 +236,10 @@ def clean_chatlog(chatlog: str, confidence_threshold: float = 0.8, progress_call
         if not 0 <= confidence_threshold <= 1:
             raise ValueError("Confidence threshold must be between 0 and 1")
         
-        # Additional sanitization
-        chatlog = chatlog.strip()  # Remove leading/trailing whitespace
-        chatlog = re.sub(r'\r\n?', '\n', chatlog)  # Normalize line endings
-        
-        # Convert to ASCII using unidecode
-        cleaned_text = unidecode.unidecode(chatlog)
+        # Do all existing cleaning first
+        cleaned_text = chatlog.strip()  # Remove leading/trailing whitespace
+        cleaned_text = re.sub(r'\r\n?', '\n', cleaned_text) # Normalize line endings
+        cleaned_text = unidecode.unidecode(cleaned_text) # Convert to ASCII using unidecode
         
         # Remove unwanted lines using cached patterns
         for pattern in COMPILED_UNWANTED_PATTERNS:
@@ -206,6 +272,17 @@ def clean_chatlog(chatlog: str, confidence_threshold: float = 0.8, progress_call
         
         for pattern, compiled_pattern in COMPILED_GENDER_PATTERNS.items():
             cleaned_text = compiled_pattern.sub(GENDER_TERM_REPLACEMENTS[pattern], cleaned_text)
+        
+        # NEW: Replace all instances of detected entities with [ENTITY]
+        for entity_type, words in detected_entities.items():
+            for word in words:
+                # Create pattern that matches whole word case-insensitively
+                pattern = rf'\b{re.escape(word)}\b'
+                cleaned_text = re.sub(pattern, '[ENTITY]', cleaned_text, flags=re.IGNORECASE)
+        
+        # Apply nationality/ethnicity replacements
+        for pattern, replacement in NATIONALITY_ETHNICITY_TERMS.items():
+            cleaned_text = re.sub(pattern, replacement, cleaned_text, flags=re.IGNORECASE)
         
         # Clean up multiple newlines
         cleaned_text = re.sub(r'\n\s*\n\s*\n', '\n\n', cleaned_text)
@@ -240,7 +317,7 @@ def process_chatlogs(p_csv:str):
                 'Chatlog': row['Chatlog']
             }
             # Create directory for this participant if it doesn't exist
-            pid_dir = os.path.join('chatlogs', str(i - 2))
+            pid_dir = os.path.join('chatlogs2', str(i - 2))
             os.makedirs(pid_dir, exist_ok=True)
             
             # Save raw chatlog to a file
@@ -250,8 +327,8 @@ def process_chatlogs(p_csv:str):
             i += 1
 
     # Second loop: Process each directory
-    for pid in os.listdir('chatlogs'):
-        pid_path = os.path.join('chatlogs', pid)
+    for pid in os.listdir('chatlogs2'):
+        pid_path = os.path.join('chatlogs2', pid)
         if os.path.isdir(pid_path):
             chatlog_file_path = os.path.join(pid_path, 'raw_chatlog.txt')
             if os.path.exists(chatlog_file_path):
@@ -264,16 +341,16 @@ def process_chatlogs(p_csv:str):
                             print(f"Warning: Empty chatlog found in {pid_path}, skipping...")
                             continue
                         
-                        # Get the detection log
-                        detection_log_output = log_presidio_detections(chatlog_content)
+                        # Get both the detection log and entity dictionary
+                        detection_log_output, detected_entities = log_presidio_detections(chatlog_content)
                         
-                        # Save detection log for this directory
+                        # Save detection log
                         detection_log_path = os.path.join(pid_path, 'presidio_detections.txt')
                         with open(detection_log_path, 'w') as log_file:
                             log_file.write(detection_log_output)
                         
                         # Clean the chatlog
-                        cleaned_chatlog = clean_chatlog(chatlog_content)
+                        cleaned_chatlog = clean_chatlog(chatlog_content, detected_entities)
                         
                         # Save cleaned chatlog
                         cleaned_chatlog_path = os.path.join(pid_path, 'cleaned_chatlog.txt')
@@ -285,5 +362,5 @@ def process_chatlogs(p_csv:str):
                     continue
 
 if __name__ == "__main__":
-    process_chatlogs("data/testdata.csv")
+    process_chatlogs("data/Chatbot Pilot_April 9, 2025_14.43.csv")
 

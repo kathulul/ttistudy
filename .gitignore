@@ -36,7 +36,4 @@ build/
 .env.local
 *.log
 
-# Data files (if you don't want to track them)
-# Uncomment if needed:
-# *.csv
-# *.json
+intscriptsxd/
