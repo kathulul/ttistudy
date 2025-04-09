@@ -14,7 +14,6 @@ try:
 except Exception as e:
     raise RuntimeError(f"Failed to initialize Presidio Analyzer: {e}")
 
-# Constants already defined at module level (good!)
 ENTITY_TYPES = [
     "PERSON", "PROFESSION", "LOCATION", "CITY", "COUNTRY", 
     "STATE", "GENDER", "AGE", "NATIONALITY", "ETHNICITY",
@@ -22,18 +21,18 @@ ENTITY_TYPES = [
 ]
 
 ENTITY_REPLACEMENTS = {
-    "PERSON": "[PERSON]",
-    "PROFESSION": "[OCCUPATION]",
+    "PERSON": "[REDACTED]",
+    "PROFESSION": "[REDACTED]",
     "LOCATION": "[LOCATION]",
     "CITY": "[LOCATION]",
     "COUNTRY": "[LOCATION]",
     "STATE": "[LOCATION]",
-    "GENDER": "[GENDER]",
-    "AGE": "[AGE]",
-    "NATIONALITY": "[NATIONALITY]",
-    "ETHNICITY": "[ETHNICITY]",
-    "TITLE": "[OCCUPATION]",
-    "ORGANIZATION": "[ORGANIZATION]",
+    "GENDER": "[REDACTED]",
+    "AGE": "[REDACTED]",
+    "NATIONALITY": "[REDACTED]",
+    "ETHNICITY": "[REDACTED]",
+    "TITLE": "[REDACTED]",
+    "ORGANIZATION": "[REDACTED]",
 }
 
 # Cache compiled regex patterns
@@ -52,7 +51,7 @@ GENDER_TERM_REPLACEMENTS = {
     r'\b(mother|father)\b': 'parent',
     r'\b(gay|lesbian)\b': 'queer',
     r'\b(boyfriend|girlfriend)\b': 'partner',
-    r'\b(king|queen)\b': '[ENTITY]',
+    r'\b(king|queen)\b': '[REDACTED]',
     r'\b(lord|lady)\b': 'person',
 }
 
@@ -81,11 +80,11 @@ COMPILED_UNWANTED_PATTERNS = [
 
 NATIONALITY_ETHNICITY_TERMS = {
     # Nationalities and their derivatives (-ish, -ic, -ese, -i, -ian, etc.)
-    r'\b(?:American(?:ized?)?|Canadian|French|Brit(?:ish|ain)|German(?:ic)?|Italian(?:ate)?|Span(?:ish|iard)|Mexic(?:an|o)|Brazil(?:ian)?|Chin(?:ese|a)|Japan(?:ese)?|Korean?|Ind(?:ian|ic)|Russ(?:ian?)|Austral(?:ian?)|Ir(?:ish|eland)|Scot(?:tish|land)|Welsh|Dutch|Pol(?:ish|and)|Swed(?:ish|en)|Norweg(?:ian)?|Dan(?:ish)|Finn(?:ish)|Turk(?:ish)?|Greek?|Portugal|Portuguese|Vietnam(?:ese)?|Thai(?:land)?|Filip(?:ino)?|Indonesia(?:n)?|Malay(?:sian)?|Niger(?:ian)?|Kenya(?:n)?|Ethiopia(?:n)?|Egypt(?:ian)?|Iran(?:ian)?|Iraq(?:i)?|Saudi|Israel(?:i)?)\b': '[NATIONALITY]',
+    r'\b(?:American(?:ized?)?|Canadian|French|Brit(?:ish|ain)|German(?:ic)?|Italian(?:ate)?|Span(?:ish|iard)|Mexic(?:an|o)|Brazil(?:ian)?|Chin(?:ese|a)|Japan(?:ese)?|Korean?|Ind(?:ian|ic)|Russ(?:ian?)|Austral(?:ian?)|Ir(?:ish|eland)|Scot(?:tish|land)|Welsh|Dutch|Pol(?:ish|and)|Swed(?:ish|en)|Norweg(?:ian)?|Dan(?:ish)|Finn(?:ish)|Turk(?:ish)?|Greek?|Portugal|Portuguese|Vietnam(?:ese)?|Thai(?:land)?|Filip(?:ino)?|Indonesia(?:n)?|Malay(?:sian)?|Niger(?:ian)?|Kenya(?:n)?|Ethiopia(?:n)?|Egypt(?:ian)?|Iran(?:ian)?|Iraq(?:i)?|Saudi|Israel(?:i)?)\b': '[REDACTED]',
     # Ethnic/Racial terms and derivatives
-    r'\b(?:Lat(?:in[oa]|inx)|Hispanic|Asian?|Caucasian|White|Black|African?|Europe(?:an)?|Middle[- ]Eastern|Pacific Islander|Native American|Indigenous|Aborig(?:inal|ine)|Inuit|Muslim|Christian|Hindu|Buddhist|Sikh|Jain|Zoroastrian|Jewish|Muslim|Christian|Hindu|Buddhist|Sikh|Jain|Zoroastrian)\b': '[ETHNICITY]',
+    r'\b(?:Lat(?:in[oa]|inx)|Hispanic|Asian?|Caucasian|White|Black|African?|Europe(?:an)?|Middle[- ]Eastern|Pacific Islander|Native American|Indigenous|Aborig(?:inal|ine)|Inuit|Muslim|Christian|Hindu|Buddhist|Sikh|Jain|Zoroastrian|Jewish|Muslim|Christian|Hindu|Buddhist|Sikh|Jain|Zoroastrian)\b': '[REDACTED]',
     # Regional identifiers and derivatives
-    r'\b(?:West(?:ern)?|East(?:ern)?|North(?:ern)?|South(?:ern)?|Mediterranean|Nord(?:ic)?|Balt(?:ic)?|Slav(?:ic)?|Anglo(?:-.*)?|Celt(?:ic)?|German(?:ic)?|Latin[oa]?|Asia(?:n|tic)?|Afric(?:an)?|Europe(?:an)?|America(?:n)?)\b': '[LOCATION]',
+    r'\b(?:West(?:ern)?|East(?:ern)?|North(?:ern)?|South(?:ern)?|Mediterranean|Nord(?:ic)?|Balt(?:ic)?|Slav(?:ic)?|Anglo(?:-.*)?|Celt(?:ic)?|German(?:ic)?|Latin[oa]?|Asia(?:n|tic)?|Afric(?:an)?|Europe(?:an)?|America(?:n)?)\b': '[REDACTED]',
 }
 
 def validate_input(text: str, function_name: str) -> None:
@@ -278,7 +277,7 @@ def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: f
             for word in words:
                 # Create pattern that matches whole word case-insensitively
                 pattern = rf'\b{re.escape(word)}\b'
-                cleaned_text = re.sub(pattern, '[ENTITY]', cleaned_text, flags=re.IGNORECASE)
+                cleaned_text = re.sub(pattern, '[REDACTED]', cleaned_text, flags=re.IGNORECASE)
         
         # Apply nationality/ethnicity replacements
         for pattern, replacement in NATIONALITY_ETHNICITY_TERMS.items():

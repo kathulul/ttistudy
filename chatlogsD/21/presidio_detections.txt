@@ -1,0 +1,20 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Herceptin'Confidence Score: 0.850Position: 2996-3005Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Herceptin'Confidence Score: 0.850Position: 3361-3370Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Kadcyla'Confidence Score: 0.850Position: 3498-3505Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 3 replacements

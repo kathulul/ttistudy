@@ -1,0 +1,30 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Hobbies'Confidence Score: 0.850Position: 358-365Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Blossom'Confidence Score: 0.850Position: 622-629Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Blossom'Confidence Score: 0.850Position: 795-802Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Blossom'Confidence Score: 0.850Position: 976-983Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Paris'Confidence Score: 0.850Position: 1948-1953Replacement: '[LOCATION]'------------------------------
+Entity Type: PERSONDetected Text: 'coquette'Confidence Score: 0.850Position: 2104-2112Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Zedd'Confidence Score: 0.850Position: 2798-2802Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Dabin'Confidence Score: 0.850Position: 2861-2866Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+Entity Type: GENDER_TERMDetected Text: 'girl'Position: 2098-2102Replacement: 'person'------------------------------
+PRONOUN REPLACEMENTS
+==================================================
+
+Entity Type: PRONOUNDetected Text: 'his'Position: 2873-2876Replacement: 'their'------------------------------
+Entity Type: PRONOUNDetected Text: 'his'Position: 3025-3028Replacement: 'their'------------------------------
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: REDACTEDDetected Text: 'Chinese'Position: 601-608Replacement: '[REDACTED]'------------------------------
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 6 replacements
+LOCATION: 2 replacements

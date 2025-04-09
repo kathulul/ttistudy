@@ -1,0 +1,21 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'pavlov'Confidence Score: 0.850Position: 2104-2110Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'pomodero'Confidence Score: 0.850Position: 2845-2853Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Nice'Confidence Score: 0.850Position: 2899-2903Replacement: '[LOCATION]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 1 replacements
+LOCATION: 2 replacements

@@ -1,0 +1,26 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Sebastian'Confidence Score: 0.850Position: 166-175Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Sebastian'Confidence Score: 0.850Position: 229-238Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Kendrick Lamar'Confidence Score: 0.850Position: 2467-2481Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Kendrick Lamar'Confidence Score: 0.850Position: 2580-2594Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Kendrick Lamar'Confidence Score: 0.850Position: 2838-2852Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Blacker'Confidence Score: 0.850Position: 3066-3073Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+Entity Type: PRONOUNDetected Text: 'his'Position: 2895-2898Replacement: 'their'------------------------------
+Entity Type: PRONOUNDetected Text: 'his'Position: 3299-3302Replacement: 'their'------------------------------
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: REDACTEDDetected Text: 'Black'Position: 2967-2972Replacement: '[REDACTED]'------------------------------
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 6 replacements
