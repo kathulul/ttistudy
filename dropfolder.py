@@ -1,3 +1,7 @@
+"""
+This script watches a drop folder for new images and moves them to the images directory. Press CTRL+C to stop the script.
+"""
+
 import os
 import time
 import shutil

@@ -8,7 +8,7 @@ Entity Type: PERSONDetected Text: 'Winston'Confidence Score: 0.850Position: 2455
 Entity Type: PERSONDetected Text: 'o brien'Confidence Score: 0.850Position: 2769-2776Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Celie'Confidence Score: 0.850Position: 3783-3788Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Shug'Confidence Score: 0.850Position: 3932-3936Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'The Color Purple'Confidence Score: 0.850Position: 3999-4015Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'The Color Purple'Confidence Score: 0.850Position: 3999-4015Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'shug'Confidence Score: 0.850Position: 4047-4051Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'celie'Confidence Score: 0.850Position: 4138-4143Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Shug'Confidence Score: 0.850Position: 4207-4211Replacement: '[REDACTED]'------------------------------

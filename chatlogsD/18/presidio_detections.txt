@@ -3,35 +3,35 @@ PRESIDIO DETECTION LOG
 Confidence Threshold: 0.8
 ==================================================
 
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1068-1073Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1146-1151Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1330-1335Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1411-1416Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'osaka'Confidence Score: 0.850Position: 1418-1423Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'kyoto'Confidence Score: 0.850Position: 1425-1430Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1523-1528Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1575-1580Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 1582-1587Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 1593-1598Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1673-1678Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1723-1728Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 1753-1758Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 1779-1784Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1917-1922Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1925-1930Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 2113-2118Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 2158-2163Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 2166-2171Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 2297-2302Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1068-1073Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1146-1151Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1330-1335Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1411-1416Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'osaka'Confidence Score: 0.850Position: 1418-1423Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'kyoto'Confidence Score: 0.850Position: 1425-1430Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1523-1528Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1575-1580Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 1582-1587Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 1593-1598Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1673-1678Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1723-1728Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 1753-1758Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 1779-1784Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 1917-1922Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 1925-1930Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 2113-2118Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 2158-2163Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 2166-2171Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 2297-2302Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Fushimi Inari'Confidence Score: 0.850Position: 2466-2479Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Shibuya'Confidence Score: 0.850Position: 2601-2608Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 2631-2636Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 3012-3017Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Shibuya'Confidence Score: 0.850Position: 2601-2608Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 2631-2636Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Tokyo'Confidence Score: 0.850Position: 3012-3017Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Shimokitazawa'Confidence Score: 0.850Position: 3265-3278Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 3588-3593Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Amerikamura'Confidence Score: 0.850Position: 3708-3719Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 3846-3851Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 4188-4193Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Osaka'Confidence Score: 0.850Position: 3588-3593Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Amerikamura'Confidence Score: 0.850Position: 3708-3719Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Kyoto'Confidence Score: 0.850Position: 3846-3851Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Japan'Confidence Score: 0.850Position: 4188-4193Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Mona Lisas'Confidence Score: 0.850Position: 4934-4944Replacement: '[REDACTED]'------------------------------
 GENDER TERM REPLACEMENTS
 ==================================================

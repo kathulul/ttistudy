@@ -5,7 +5,7 @@ Confidence Threshold: 0.8
 
 Entity Type: PERSONDetected Text: 'Tasha Cobbs'Confidence Score: 0.850Position: 2449-2460Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Frosted Flakes'Confidence Score: 0.850Position: 3588-3602Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Seoul'Confidence Score: 0.850Position: 4056-4061Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Seoul'Confidence Score: 0.850Position: 4056-4061Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Babe'Confidence Score: 0.850Position: 5172-5176Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Murakami'Confidence Score: 0.850Position: 5669-5677Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: '😌💭'Confidence Score: 0.850Position: 5951-5953Replacement: '[REDACTED]'------------------------------

@@ -4,26 +4,26 @@ Confidence Threshold: 0.8
 ==================================================
 
 Entity Type: PERSONDetected Text: 'Guy'Confidence Score: 0.850Position: 2444-2447Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Google Drive'Confidence Score: 0.850Position: 5218-5230Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Google Drive'Confidence Score: 0.850Position: 5218-5230Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Chill Reads'Confidence Score: 0.850Position: 6880-6891Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Oliver Sacks'Confidence Score: 0.850Position: 6970-6982Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Robert Sapolsky'Confidence Score: 0.850Position: 6995-7010Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'David Eagleman'Confidence Score: 0.850Position: 7074-7088Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Shutter Island'Confidence Score: 0.850Position: 7928-7942Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'newfoundland'Confidence Score: 0.850Position: 8856-8868Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 8945-8957Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Shutter Island'Confidence Score: 0.850Position: 7928-7942Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'newfoundland'Confidence Score: 0.850Position: 8856-8868Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 8945-8957Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Quidi Vidi'Confidence Score: 0.850Position: 9488-9498Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Bowring Park'Confidence Score: 0.850Position: 9500-9512Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: '🐟'Confidence Score: 0.850Position: 10108-10109Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Bowring Park'Confidence Score: 0.850Position: 9500-9512Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: '🐟'Confidence Score: 0.850Position: 10108-10109Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Sean Carroll'Confidence Score: 0.850Position: 10324-10336Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Hometown Glow'Confidence Score: 0.850Position: 10498-10511Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 11230-11242Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 11230-11242Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Daydream'Confidence Score: 0.850Position: 11433-11441Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 12090-12102Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Newfoundland'Confidence Score: 0.850Position: 12090-12102Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Bluetooth'Confidence Score: 0.850Position: 12545-12554Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Sing King'Confidence Score: 0.850Position: 13761-13770Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Karafun'Confidence Score: 0.850Position: 13774-13781Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Canada'Confidence Score: 0.850Position: 16050-16056Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Canada'Confidence Score: 0.850Position: 16050-16056Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Celine Dion'Confidence Score: 0.850Position: 16685-16696Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: '😏'Confidence Score: 0.850Position: 16768-16769Replacement: '[REDACTED]'------------------------------
 GENDER TERM REPLACEMENTS

@@ -14,8 +14,8 @@ Entity Type: PERSONDetected Text: 'Laufey'Confidence Score: 0.850Position: 2124-
 Entity Type: PERSONDetected Text: 'Laufey'Confidence Score: 0.850Position: 2146-2152Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Valentine'Confidence Score: 0.850Position: 2308-2317Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Laufey'Confidence Score: 0.850Position: 2525-2531Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'nova'Confidence Score: 0.850Position: 4014-4018Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'bossa nova'Confidence Score: 0.850Position: 4101-4111Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'nova'Confidence Score: 0.850Position: 4014-4018Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'bossa nova'Confidence Score: 0.850Position: 4101-4111Replacement: '[REDACTED]'------------------------------
 GENDER TERM REPLACEMENTS
 ==================================================
 

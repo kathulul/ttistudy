@@ -7,9 +7,7 @@ from typing import Optional
 from io import StringIO
 from collections import defaultdict
 
-# Initialize Presidio analyzer at module level (singleton)
 try:
-    # Initialize analyzer with default settings
     ANALYZER = AnalyzerEngine()
 except Exception as e:
     raise RuntimeError(f"Failed to initialize Presidio Analyzer: {e}")
@@ -23,10 +21,10 @@ ENTITY_TYPES = [
 ENTITY_REPLACEMENTS = {
     "PERSON": "[REDACTED]",
     "PROFESSION": "[REDACTED]",
-    "LOCATION": "[LOCATION]",
-    "CITY": "[LOCATION]",
-    "COUNTRY": "[LOCATION]",
-    "STATE": "[LOCATION]",
+    "LOCATION": "[REDACTED]",
+    "CITY": "[REDACTED]",
+    "COUNTRY": "[REDACTED]",
+    "STATE": "[REDACTED]",
     "GENDER": "[REDACTED]",
     "AGE": "[REDACTED]",
     "NATIONALITY": "[REDACTED]",
@@ -96,7 +94,14 @@ def validate_input(text: str, function_name: str) -> None:
 
 def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tuple[str, dict]:
     """
-    Analyzes text with Presidio and regex patterns, returns formatted detection log.
+    Analyzes text with Presidio and regex patterns, returns formatted detection log with confidence intervals, statistics, and detected entities. 
+
+    Args:
+        text (str): The input text to analyze
+        confidence_threshold (float): Minimum confidence score for entity detection (0.0 to 1.0)
+    
+    Returns:
+        tuple[str, dict]: A tuple containing the formatted detection log and a dictionary of detected entities
     """
     try:
         validate_input(text, "log_presidio_detections")
@@ -115,7 +120,7 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tup
         detected_entities = defaultdict(set)
         replacement_counts = defaultdict(int)
         
-        # 1. Presidio Detections
+        # Presidio Detections
         results = ANALYZER.analyze(
             text=text,
             entities=ENTITY_TYPES,
@@ -144,7 +149,7 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tup
                 detected_entities[result.entity_type].add(detected_text)
                 replacement_counts[result.entity_type] += 1
         
-        #Gender Term Replacements
+        # Gender Term Replacements
         log_buffer.write("\nGENDER TERM REPLACEMENTS\n")
         log_buffer.write("=" * 50 + "\n")
         
@@ -161,7 +166,7 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tup
                 log_buffer.write("-" * 30)
                 
         
-        # Add new section for Pronoun Replacements
+        # Pronoun Replacements log
         log_buffer.write("\nPRONOUN REPLACEMENTS\n")
         log_buffer.write("=" * 50 + "\n")
         
@@ -253,7 +258,6 @@ def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: f
         
         # Filter results by confidence threshold
         results = [r for r in results if r.score >= confidence_threshold]
-        
         # Sort results in reverse order to prevent index shifting
         results = sorted(results, key=lambda x: x.start, reverse=True)
         
@@ -299,6 +303,10 @@ def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: f
         raise Exception(error_msg) from e
 
 def process_chatlogs(p_csv:str):
+    """ 
+    Process chatlogs from a CSV file and create directories for each participant.
+    
+    """
     # First loop: Process the CSV and create directories
     participant_info = {}
     with open(p_csv, 'r') as file:
@@ -316,7 +324,7 @@ def process_chatlogs(p_csv:str):
                 'Chatlog': row['Chatlog']
             }
             # Create directory for this participant if it doesn't exist
-            pid_dir = os.path.join('chatlogs2', str(i - 2))
+            pid_dir = os.path.join('chatlogsD', str(i - 2))
             os.makedirs(pid_dir, exist_ok=True)
             
             # Save raw chatlog to a file
@@ -326,8 +334,8 @@ def process_chatlogs(p_csv:str):
             i += 1
 
     # Second loop: Process each directory
-    for pid in os.listdir('chatlogs2'):
-        pid_path = os.path.join('chatlogs2', pid)
+    for pid in os.listdir('chatlogsD'):
+        pid_path = os.path.join('chatlogsD', pid)
         if os.path.isdir(pid_path):
             chatlog_file_path = os.path.join(pid_path, 'raw_chatlog.txt')
             if os.path.exists(chatlog_file_path):

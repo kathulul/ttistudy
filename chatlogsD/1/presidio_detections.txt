@@ -4,9 +4,9 @@ Confidence Threshold: 0.8
 ==================================================
 
 Entity Type: PERSONDetected Text: 'Chill'Confidence Score: 0.850Position: 654-659Replacement: '[REDACTED]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Nice'Confidence Score: 0.850Position: 2617-2621Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Valorant'Confidence Score: 0.850Position: 3240-3248Replacement: '[LOCATION]'------------------------------
-Entity Type: LOCATIONDetected Text: 'Ascendant'Confidence Score: 0.850Position: 3711-3720Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Nice'Confidence Score: 0.850Position: 2617-2621Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Valorant'Confidence Score: 0.850Position: 3240-3248Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Ascendant'Confidence Score: 0.850Position: 3711-3720Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Valorant LMAO'Confidence Score: 0.850Position: 4297-4310Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Valorant'Confidence Score: 0.850Position: 4372-4380Replacement: '[REDACTED]'------------------------------
 GENDER TERM REPLACEMENTS

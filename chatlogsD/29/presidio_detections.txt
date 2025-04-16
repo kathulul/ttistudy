@@ -3,7 +3,7 @@ PRESIDIO DETECTION LOG
 Confidence Threshold: 0.8
 ==================================================
 
-Entity Type: LOCATIONDetected Text: 'Indie'Confidence Score: 0.850Position: 3163-3168Replacement: '[LOCATION]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Indie'Confidence Score: 0.850Position: 3163-3168Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Phoebe Bridgers'Confidence Score: 0.850Position: 3181-3196Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Hozier'Confidence Score: 0.850Position: 3198-3204Replacement: '[REDACTED]'------------------------------
 Entity Type: PERSONDetected Text: 'Bon Iver'Confidence Score: 0.850Position: 3209-3217Replacement: '[REDACTED]'------------------------------
