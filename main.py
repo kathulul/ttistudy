@@ -3,7 +3,6 @@ import os
 import re
 import unidecode
 from presidio_analyzer import AnalyzerEngine
-from typing import Optional
 from io import StringIO
 from collections import defaultdict
 
@@ -206,7 +205,9 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tup
         for entity_type, count in replacement_counts.items():
             log_buffer.write(f"{entity_type}: {count} replacements\n")
         
-        return log_buffer.getvalue(), dict(detected_entities)
+        log_output = log_buffer.getvalue()
+        log_buffer.close()  # Free memory
+        return log_output, dict(detected_entities)
         
     except Exception as e:
         error_msg = f"Error in log_presidio_detections: {str(e)}"
@@ -276,7 +277,7 @@ def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: f
         for pattern, compiled_pattern in COMPILED_GENDER_PATTERNS.items():
             cleaned_text = compiled_pattern.sub(GENDER_TERM_REPLACEMENTS[pattern], cleaned_text)
         
-        # NEW: Replace all instances of detected entities with [ENTITY]
+        # Replace all instances of detected entities with [REDACTED]
         for entity_type, words in detected_entities.items():
             for word in words:
                 # Create pattern that matches whole word case-insensitively
