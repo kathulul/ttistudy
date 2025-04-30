@@ -1,0 +1,28 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Yo'Confidence Score: 0.850Position: 343-345Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Tus Lagrimas'Confidence Score: 0.850Position: 1830-1842Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Mora'Confidence Score: 0.850Position: 1846-1850Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Sech'Confidence Score: 0.850Position: 1856-1860Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Tus Lagrimas'Confidence Score: 0.850Position: 1965-1977Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: REDACTEDDetected Text: 'Latino'Position: 1187-1193Replacement: '[REDACTED]'------------------------------
+Entity Type: REDACTEDDetected Text: 'Latino'Position: 1293-1299Replacement: '[REDACTED]'------------------------------
+Entity Type: REDACTEDDetected Text: 'Latino'Position: 1187-1193Replacement: '[REDACTED]'------------------------------
+Entity Type: REDACTEDDetected Text: 'Latino'Position: 1293-1299Replacement: '[REDACTED]'------------------------------
+Entity Type: REDACTEDDetected Text: 'Latin'Position: 2576-2581Replacement: '[REDACTED]'------------------------------
+Entity Type: REDACTEDDetected Text: 'Latin'Position: 2899-2904Replacement: '[REDACTED]'------------------------------
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 5 replacements

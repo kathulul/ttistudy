@@ -1,0 +1,36 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: LOCATIONDetected Text: 'Indie'Confidence Score: 0.850Position: 3163-3168Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Phoebe Bridgers'Confidence Score: 0.850Position: 3181-3196Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Hozier'Confidence Score: 0.850Position: 3198-3204Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Bon Iver'Confidence Score: 0.850Position: 3209-3217Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Anderson'Confidence Score: 0.850Position: 3324-3332Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Leon Bridges'Confidence Score: 0.850Position: 3340-3352Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Tame Impala'Confidence Score: 0.850Position: 3357-3368Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Hans Zimmer'Confidence Score: 0.850Position: 3449-3460Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Ólafur Arnalds'Confidence Score: 0.850Position: 3464-3478Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'taylor swift'Confidence Score: 0.850Position: 3667-3679Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'taylor'Confidence Score: 0.850Position: 3731-3737Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Taylor Swift'Confidence Score: 0.850Position: 3788-3800Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Taylor'Confidence Score: 0.850Position: 4214-4220Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Taylor'Confidence Score: 0.850Position: 4444-4450Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Taylor'Confidence Score: 0.850Position: 4870-4876Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Alsooo'Confidence Score: 0.850Position: 4953-4959Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Taylor'Confidence Score: 0.850Position: 4981-4987Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+Entity Type: PRONOUNDetected Text: 'her'Position: 3825-3828Replacement: 'them'------------------------------
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+LOCATION: 1 replacements
+PERSON: 16 replacements

@@ -1,0 +1,19 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+No Presidio entities detected above confidence threshold.
+
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: REDACTEDDetected Text: 'Western'Position: 2034-2041Replacement: '[REDACTED]'------------------------------
+REPLACEMENT STATISTICS
+==================================================

@@ -1,0 +1,38 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Gravy'Confidence Score: 0.850Position: 727-732Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Gravy'Confidence Score: 0.850Position: 757-762Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Gravy'Confidence Score: 0.850Position: 819-824Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Gravy'Confidence Score: 0.850Position: 1042-1047Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Gravy'Confidence Score: 0.850Position: 1055-1060Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Nice'Confidence Score: 0.850Position: 1462-1466Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Badminton'Confidence Score: 0.850Position: 1468-1477Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'John Singer Sargent'Confidence Score: 0.850Position: 2022-2041Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Monet'Confidence Score: 0.850Position: 2049-2054Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Dali'Confidence Score: 0.850Position: 2059-2063Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Yo'Confidence Score: 0.850Position: 2170-2172Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Gravy'Confidence Score: 0.850Position: 2192-2197Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Sargent'Confidence Score: 0.850Position: 2199-2206Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Monet'Confidence Score: 0.850Position: 2313-2318Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Dali'Confidence Score: 0.850Position: 2361-2365Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Sargent'Confidence Score: 0.850Position: 2484-2491Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Monet'Confidence Score: 0.850Position: 2503-2508Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Dali'Confidence Score: 0.850Position: 2535-2539Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Sargent'Confidence Score: 0.850Position: 2968-2975Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Nice'Confidence Score: 0.850Position: 3155-3159Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 18 replacements
+LOCATION: 2 replacements

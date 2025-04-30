@@ -1,0 +1,27 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Tasha Cobbs'Confidence Score: 0.850Position: 2449-2460Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Frosted Flakes'Confidence Score: 0.850Position: 3588-3602Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Seoul'Confidence Score: 0.850Position: 4056-4061Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Babe'Confidence Score: 0.850Position: 5172-5176Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Murakami'Confidence Score: 0.850Position: 5669-5677Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: '😌💭'Confidence Score: 0.850Position: 5951-5953Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+Entity Type: GENDER_TERMDetected Text: 'queen'Position: 1713-1718Replacement: '[REDACTED]'------------------------------
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+Entity Type: REDACTEDDetected Text: 'Japanese'Position: 3245-3253Replacement: '[REDACTED]'------------------------------
+Entity Type: REDACTEDDetected Text: 'Japanese'Position: 4159-4167Replacement: '[REDACTED]'------------------------------
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 5 replacements
+LOCATION: 1 replacements

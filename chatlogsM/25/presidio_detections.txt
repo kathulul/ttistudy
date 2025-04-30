@@ -1,0 +1,20 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: PERSONDetected Text: 'Shaperbox'Confidence Score: 0.850Position: 3473-3482Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Shaperbox'Confidence Score: 0.850Position: 3629-3638Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Sausage Fattener'Confidence Score: 0.850Position: 3931-3947Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+PERSON: 3 replacements

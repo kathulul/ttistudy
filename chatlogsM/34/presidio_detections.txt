@@ -1,0 +1,41 @@
+PRESIDIO DETECTION LOG
+==================================================
+Confidence Threshold: 0.8
+==================================================
+
+Entity Type: LOCATIONDetected Text: 'Nice'Confidence Score: 0.850Position: 181-185Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'League'Confidence Score: 0.850Position: 274-280Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Cuphead'Confidence Score: 0.850Position: 1455-1462Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Celeste'Confidence Score: 0.850Position: 1480-1487Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'League'Confidence Score: 0.850Position: 1751-1757Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Nami'Confidence Score: 0.850Position: 1762-1766Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Lulu'Confidence Score: 0.850Position: 1771-1775Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Samira'Confidence Score: 0.850Position: 1827-1833Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Leona'Confidence Score: 0.850Position: 1851-1856Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Juno Mercy'Confidence Score: 0.850Position: 1936-1946Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Kiriko'Confidence Score: 0.850Position: 1950-1956Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'Nami'Confidence Score: 0.850Position: 2243-2247Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Lulu'Confidence Score: 0.850Position: 2266-2270Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Naut'Confidence Score: 0.850Position: 2291-2295Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Juno Mercy'Confidence Score: 0.850Position: 2627-2637Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Kiriko'Confidence Score: 0.850Position: 2683-2689Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Split'Confidence Score: 0.850Position: 3984-3989Replacement: '[REDACTED]'------------------------------
+Entity Type: PERSONDetected Text: 'Yasuo'Confidence Score: 0.850Position: 4438-4443Replacement: '[REDACTED]'------------------------------
+GENDER TERM REPLACEMENTS
+==================================================
+
+PRONOUN REPLACEMENTS
+==================================================
+
+Entity Type: PRONOUNDetected Text: 'she'Position: 1818-1821Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'she'Position: 2309-2312Replacement: 'they'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 1865-1868Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 3015-3018Replacement: 'them'------------------------------
+Entity Type: PRONOUNDetected Text: 'her'Position: 4002-4005Replacement: 'them'------------------------------
+NATIONALITY/ETHNICITY REPLACEMENTS
+==================================================
+
+REPLACEMENT STATISTICS
+==================================================
+LOCATION: 4 replacements
+PERSON: 14 replacements

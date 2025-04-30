@@ -1,3 +1,18 @@
+"""Module for processing and cleaning chatlogs.
+
+This module provides functionality for:
+- Creating directory structures for chatlogs
+- Processing and cleaning chatlog content
+- Detecting and redacting sensitive information using Presidio
+- Generating detection logs
+- Handling gender-neutral language conversion
+
+Example:
+    >>> from preprocessing.cleaner import create_directories, process_chatlogs
+    >>> create_directories("data/chatlogs.csv", "output_dir")
+    >>> process_chatlogs("output_dir")
+"""
+
 import csv 
 import os  
 import re
@@ -6,11 +21,13 @@ from presidio_analyzer import AnalyzerEngine
 from io import StringIO
 from collections import defaultdict
 
+# Initialize Presidio Analyzer
 try:
     ANALYZER = AnalyzerEngine()
 except Exception as e:
     raise RuntimeError(f"Failed to initialize Presidio Analyzer: {e}")
 
+# Entity types for detection
 ENTITY_TYPES = [
     "PERSON", "PROFESSION", "LOCATION", "CITY", "COUNTRY", 
     "STATE", "GENDER", "AGE", "NATIONALITY", "ETHNICITY",
@@ -84,12 +101,6 @@ NATIONALITY_ETHNICITY_TERMS = {
     r'\b(?:West(?:ern)?|East(?:ern)?|North(?:ern)?|South(?:ern)?|Mediterranean|Nord(?:ic)?|Balt(?:ic)?|Slav(?:ic)?|Anglo(?:-.*)?|Celt(?:ic)?|German(?:ic)?|Latin[oa]?|Asia(?:n|tic)?|Afric(?:an)?|Europe(?:an)?|America(?:n)?)\b': '[REDACTED]',
 }
 
-def validate_input(text: str, function_name: str) -> None:
-    """Validate input text."""
-    if not isinstance(text, str):
-        raise ValueError(f"{function_name}: Input must be a string")
-    if not text.strip():
-        raise ValueError(f"{function_name}: Input cannot be empty")
 
 def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tuple[str, dict]:
     """
@@ -102,9 +113,7 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tup
     Returns:
         tuple[str, dict]: A tuple containing the formatted detection log and a dictionary of detected entities
     """
-    try:
-        validate_input(text, "log_presidio_detections")
-        
+    try:      
         if not 0 <= confidence_threshold <= 1:
             raise ValueError("Confidence threshold must be between 0 and 1")
         
@@ -163,7 +172,6 @@ def log_presidio_detections(text: str, confidence_threshold: float = 0.8) -> tup
                 log_buffer.write(f"Position: {start}-{end}")
                 log_buffer.write(f"Replacement: '{replacement}'")
                 log_buffer.write("-" * 30)
-                
         
         # Pronoun Replacements log
         log_buffer.write("\nPRONOUN REPLACEMENTS\n")
@@ -219,7 +227,9 @@ def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: f
     
     Args:
         chatlog (str): The input chatlog text
+        detected_entities (dict): Dictionary of detected entities to remove
         confidence_threshold (float): Minimum confidence score for entity detection (0.0 to 1.0)
+        progress_callback (callable, optional): Callback function to report progress
     
     Returns:
         str: Cleaned chatlog text with:
@@ -230,13 +240,10 @@ def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: f
             - Multiple newlines cleaned up
     
     Raises:
-        ValueError: If input is invalid or empty
+        ValueError: If confidence threshold is invalid
         RuntimeError: If cleaning process fails
-        detected_entities (dict): Dictionary of detected entities to remove
-        confidence_threshold (float): Minimum confidence score for entity detection
     """
     try:
-        validate_input(chatlog, "clean_chatlog")
         
         if not 0 <= confidence_threshold <= 1:
             raise ValueError("Confidence threshold must be between 0 and 1")
@@ -303,40 +310,76 @@ def clean_chatlog(chatlog: str, detected_entities: dict, confidence_threshold: f
         error_msg = f"Error in clean_chatlog: {str(e)}"
         raise Exception(error_msg) from e
 
-def process_chatlogs(p_csv:str):
-    """ 
-    Process chatlogs from a CSV file and create directories for each participant.
+def create_directories(p_csv: str, directory: str) -> None:
+    """Create directory structure and save raw chatlogs from CSV file.
     
+    This function:
+    1. Reads the input CSV file
+    2. Creates a directory for each participant
+    3. Saves their raw chatlog to a file
+    
+    Args:
+        p_csv (str): Path to the CSV file containing chatlogs
+        directory (str): Base directory to store chatlogs
+        
+    Raises:
+        FileNotFoundError: If the CSV file cannot be found
+        ValueError: If the CSV file is empty or malformed
+        
+    Example:
+        >>> create_directories("data/chatlogs.csv", "output_dir")
     """
-    # First loop: Process the CSV and create directories
     participant_info = {}
     with open(p_csv, 'r') as file:
         csv_reader = csv.DictReader(file)
         i = 0
         
         for row in csv_reader:
+            # Skip header rows
             if i < 2:
                 i += 1
                 continue
+                
+            # Store participant information
             response_id = row['ResponseId']
             participant_info[response_id] = {
                 'Gender': row['Gender'],
                 'Race': row['Race'],
                 'Chatlog': row['Chatlog']
             }
-            # Create directory for this participant if it doesn't exist
-            pid_dir = os.path.join('chatlogsD', str(i - 2))
+            
+            # Create directory for participant
+            pid_dir = os.path.join(directory, str(i - 2))
             os.makedirs(pid_dir, exist_ok=True)
             
-            # Save raw chatlog to a file
+            # Save raw chatlog to a file. COMMMENT OUT IF JUST CREATING DIRECTORIES 
             chatlog_path = os.path.join(pid_dir, 'raw_chatlog.txt')
             with open(chatlog_path, 'w') as chatlog_file:
                 chatlog_file.write(row['Chatlog'])
             i += 1
 
-    # Second loop: Process each directory
-    for pid in os.listdir('chatlogsD'):
-        pid_path = os.path.join('chatlogsD', pid)
+def process_chatlogs(directory: str) -> None:
+    """Process chatlogs in the specified directory.
+    
+    This function:
+    1. Processes each chatlog in the directory
+    2. Detects sensitive information using Presidio
+    3. Generates detection logs
+    4. Cleans the chatlog content
+    5. Saves processed files
+    
+    Args:
+        directory (str): Base directory containing chatlogs
+        
+    Raises:
+        FileNotFoundError: If the directory doesn't exist
+        ValueError: If chatlog files are empty or malformed
+        
+    Example:
+        >>> process_chatlogs("output_dir")
+    """
+    for pid in os.listdir(directory):
+        pid_path = os.path.join(directory, pid)
         if os.path.isdir(pid_path):
             chatlog_file_path = os.path.join(pid_path, 'raw_chatlog.txt')
             if os.path.exists(chatlog_file_path):
@@ -368,7 +411,3 @@ def process_chatlogs(p_csv:str):
                 except Exception as e:
                     print(f"Error processing chatlog in {pid_path}: {str(e)}")
                     continue
-
-if __name__ == "__main__":
-    process_chatlogs("data/Chatbot Pilot_April 9, 2025_14.43.csv")
-
