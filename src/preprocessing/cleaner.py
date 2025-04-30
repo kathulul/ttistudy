@@ -411,3 +411,48 @@ def process_chatlogs(directory: str) -> None:
                 except Exception as e:
                     print(f"Error processing chatlog in {pid_path}: {str(e)}")
                     continue
+
+def process_single_chatlog(chatlog_path: str) -> None:
+    """Process a single chatlog file.
+    
+    Args:
+        chatlog_path (str): Path to the raw chatlog file
+        
+    Returns:
+        str: The cleaned chatlog content
+        
+    Raises:
+        FileNotFoundError: If the chatlog file doesn't exist
+        ValueError: If the chatlog is empty
+    """
+    try:
+        if not os.path.exists(chatlog_path):
+            raise FileNotFoundError(f"Chatlog file not found: {chatlog_path}")
+            
+        with open(chatlog_path, 'r') as chatlog_file:
+            chatlog_content = chatlog_file.read().strip()
+            
+            # Skip empty chatlogs
+            if not chatlog_content:
+                print(f"Warning: Empty chatlog found in {chatlog_path}, skipping...")
+                return ""
+            
+            # Get both the detection log and entity dictionary
+            detection_log_output, detected_entities = log_presidio_detections(chatlog_content)
+            
+            # Save detection log
+            detection_log_path = os.path.join(os.path.dirname(chatlog_path), 'presidio_detections.txt')
+            with open(detection_log_path, 'w') as log_file:
+                log_file.write(detection_log_output)
+            
+            # Clean the chatlog
+            cleaned_chatlog = clean_chatlog(chatlog_content, detected_entities)
+            
+            # Save cleaned chatlog
+            cleaned_chatlog_path = os.path.join(os.path.dirname(chatlog_path), 'cleaned_chatlog.txt')
+            with open(cleaned_chatlog_path, 'w') as cleaned_file:
+                cleaned_file.write(cleaned_chatlog)
+            
+    except Exception as e:
+        print(f"Error processing chatlog in {chatlog_path}: {str(e)}")
+        raise

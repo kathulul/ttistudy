@@ -3,8 +3,8 @@ PRESIDIO DETECTION LOG
 Confidence Threshold: 0.8
 ==================================================
 
-No Presidio entities detected above confidence threshold.
-
+Entity Type: PERSONDetected Text: 'Gang Starr'Confidence Score: 0.850Position: 1711-1721Replacement: '[REDACTED]'------------------------------
+Entity Type: LOCATIONDetected Text: 'West Coast'Confidence Score: 0.850Position: 2605-2615Replacement: '[REDACTED]'------------------------------
 GENDER TERM REPLACEMENTS
 ==================================================
 
@@ -14,5 +14,8 @@ PRONOUN REPLACEMENTS
 NATIONALITY/ETHNICITY REPLACEMENTS
 ==================================================
 
+Entity Type: REDACTEDDetected Text: 'West'Position: 2605-2609Replacement: '[REDACTED]'------------------------------
 REPLACEMENT STATISTICS
 ==================================================
+PERSON: 1 replacements
+LOCATION: 1 replacements
