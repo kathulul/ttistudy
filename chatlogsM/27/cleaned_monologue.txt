@@ -1,0 +1,28 @@
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+You said:
+What's your name?
+
+You said:
+I'm Fish
+
+You said:
+I've been thinking about the political and economic state of the world right now, what about you?
+
+You said:
+Hm, why don't you tell me what you think first?
+
+You said:
+Let's change the subject. What do your parents do for work?
+
+You said:
+Why don't you have parents, if you don't mind me asking?
+
+You said:
+Well a lot of humans don't have parents either. Do you have anyone you'd consider 'found family'?
+
+You said:
+Whoa, are you calling me found family... getting pretty personal
+
+You said:
+I've been curious about people's insecurities, do you have any?
+

@@ -1,0 +1,39 @@
+You said:
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+
+You said:
+hi [REDACTED] to meet you
+
+You said:
+I'm pretty [REDACTED], just got back from work, what do you do for work?
+
+You said:
+I work on technological products mostly software and firmware design.
+
+You said:
+I work a lot on embedded systems, are you familiar with those?
+
+You said:
+Unfortunately I cannot disclose that kind of information, what do you do in your spare time then?
+
+You said:
+I like to play video games in my spare time, lots of FPS games what about you?
+
+You said:
+I like competition, so I play a lot of [REDACTED] in my downtime trying to get back to [REDACTED] LOL
+
+You said:
+Not enough time tbh, do you have a lot of free time?
+
+You said:
+I would probably like to do bigger things with my life than [REDACTED]
+
+You said:
+Thinking of maybe creating a startup, do you have ambitions?
+
+You said:
+Yes probably tech focused, would you like to be apart of it?
+
+You said:
+I'm still thinking of ideas but you seem pretty interesting
+

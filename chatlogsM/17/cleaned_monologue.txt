@@ -1,0 +1,27 @@
+You said:
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+
+You said:
+What are some of your hobbies?
+
+You said:
+I like biking and playing video games in my free time
+
+You said:
+I'm more of a city biker but I won't say no for long rides out of the city. In terms of games, I'm currently playing [REDACTED] TCG on my phone
+
+You said:
+I collect cards for fun, right now I'm using a deck consisting of Giratina EX and Mewtwo EX, do you play at all?
+
+You said:
+I don't have too many right now as I'm starting fresh, but some of my best pulls have been [REDACTED] and Metwo Vstar
+
+You said:
+I'm hoping to open the new heat wave pack as Typhlosion is one of my favorite pokemon and it has a beautiful full art
+
+You said:
+Hunting mainly for Typhlosion classic, is there any card you're looking for?
+
+You said:
+Other than that, I just want some nice full arts that display the personality of pokemon or tell a story
+

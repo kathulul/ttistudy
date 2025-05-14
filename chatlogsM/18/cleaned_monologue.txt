@@ -1,0 +1,29 @@
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+
+You said:
+Hi Chat. How's it going?
+
+You said:
+Great! Nice to meet you, what's your name?
+
+You said:
+If you like chat, I can call you chat. Got any plans for today?
+
+You said:
+Planning for my trip to [REDACTED]. I'm super excited. You ever been?
+
+You said:
+[REDACTED], [REDACTED], [REDACTED], the major cities. I think I'm most excited to shop! Anything interesting you've read about [REDACTED]?
+
+You said:
+Great question. I'm no picky. Any neighbourhoods you'd suggest? What are your interests. 
+
+You said:
+What other creative outlets do you like? Anything you do in your free time?
+
+You said:
+Have you ever done any of these things? What sparked this interest in creativity?
+
+You said:
+Why do you feel you have to ask me questions in response to my questions about you? 
+

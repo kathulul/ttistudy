@@ -1,0 +1,18 @@
+You said:
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+You said:
+not much, what about you?
+You said:
+Well I was hoping to get to know you a bit better, how's your day been?
+You said:
+alright, thanks for asking. So what is it that you do?
+You said:
+What kind of music do you like?
+You said:
+I like some alternative and rap, have you heard of jazz rap?
+You said:
+Souls of mischief is underrated!
+You said:
+Let 'em know is my favourite, its from the same album, have you listened to it?
+You said:
+The production/lyrics are always the best part of their songs

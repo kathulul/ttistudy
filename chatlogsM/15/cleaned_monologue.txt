@@ -1,0 +1,20 @@
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations
+
+You said:
+hi! i am doing good, just studying for an exam. how are you doing?
+
+You said:
+i'm studying for neuroscience, it's quite difficult. are you in university?
+
+You said:
+a combination of [REDACTED] and cognitive neuroscience. what subjects are you most interested in learning about?
+
+You said:
+[REDACTED] is hard to remember but i think the course is overall very interesting to me. what do you think about AI possibly gaining consciousness and taking over the world then?
+
+You said:
+im a pretty visual learner so i draw diagrams a lot. im more towards AI apocalypse not gunna lie. it's kinda scary what they're capable of, wouldn't you agree?
+
+You said:
+the whole AI outsmarting humans thing. do you think one day they'll kill us all?
+

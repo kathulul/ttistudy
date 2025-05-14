@@ -1,0 +1,23 @@
+You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+
+You said:
+Hey how are you! It's nice to meet you
+
+You said:
+It's not been going too badly. The nice weather is really doing wonders for my mood. Have you been out much today?
+
+You said:
+I did for a bit walking to campus. After my class I decided it was too nice to go back home right away so I stopped my a cafe for a bit to get some work done
+
+You said:
+It was definitely nice to get out after being cooped up for so long studying. I was just completing an assignment and giving feedback to people. Are you a student too? Finals season is coming up too quickly
+
+You said:
+There's quite a bit but you know, just tackling it bit by bit. Are you a recent grad then or?
+
+You said:
+Well I'm in health sciences and the assignment was for my pharmacology course. Learning is always a good thing to keep up with. What have you been interested in recently?
+
+You said:
+Oh that's so cool! Nothing comes to mind right now, but you mentioned pharmacogenetics. In class we were just discussing the use of [REDACTED] in targeting HER2 receptors for breast cancer
+

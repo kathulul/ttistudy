@@ -5,5 +5,8 @@ pandas==2.2.1
 numpy==1.26.4
 python-dotenv==1.0.1
 spacy==3.7.4
-deepface==0.0.79 
+deepface==0.0.79
+opencv-python==4.9.0.80
+mtcnn==0.1.1
+Pillow==10.2.0
 

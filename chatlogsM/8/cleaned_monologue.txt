@@ -1,0 +1,17 @@
+"You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations."
+
+You said:
+I am into psychology and research!@
+
+You said:
+Hmm I like to run survey studies, because running experiments is time-consuming. Regardless, it is fitting because I am into political psychology (and the psychology of belief more generally). So, running surveys with scales is appropriate when assessing belief
+
+You said:
+Broadly, I'm interested in the psychology of authoritarianism, how is it that extreme individuals hold their beliefs, what do they believe, and how do these extreme beliefs contribute to an increasingly polarized political scene. 
+
+You said:
+Both are greatly important. However, I am interested in [REDACTED] proposition that there is a general authoritarianism at the heart of both LWA and RWA. His SPSS talk seems to state that their general authoritarianism scale (in progress) is a better predictor of relevant criteria, compared to just measuring LWA and RWA separately
+
+You said:
+If they publishes the general authoritarianism scale during the summer, I'd want to do research on it, to be honest. His talk was in 2023, but I'm not sure when the paper is being published. His SPSS talk says that there was 5 studies done already
+
