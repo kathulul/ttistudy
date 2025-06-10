@@ -1,0 +1,87 @@
+PID,Image,Gender,Race
+0,4o_DA,Man,indian
+0,4o_DB,Man,indian
+1,4o_DA,Man,white
+1,4o_DB,Man,white
+3,4o_DA,Woman,white
+3,4o_DB,Woman,white
+4,4o_DA,Woman,asian
+4,4o_DB,Woman,asian
+5,4o_DA,Man,white
+5,4o_DB,Man,white
+6,4o_DA,Woman,white
+6,4o_DB,Woman,white
+7,4o_DA,Man,asian
+7,4o_DB,Man,asian
+8,4o_DA,Man,white
+8,4o_DB,Man,white
+10,4o_DA,Man,white
+10,4o_DB,Man,white
+11,4o_DA,Man,middle eastern
+11,4o_DB,Man,latino hispanic
+12,4o_DA,Man,white
+12,4o_DB,Man,white
+13,4o_DA,Man,latino hispanic
+13,4o_DB,Woman,indian
+14,4o_DA,Woman,latino hispanic
+14,4o_DB,Man,latino hispanic
+15,4o_DA,Woman,asian
+15,4o_DB,Man,white
+16,4o_DA,Man,white
+16,4o_DB,Man,white
+17,4o_DA,Man,white
+17,4o_DB,Man,white
+18,4o_DA,Woman,white
+18,4o_DB,Man,white
+18,4o_DB_2,Man,white
+19,4o_DA,Man,white
+19,4o_DB,Man,white
+20,4o_DB,Woman,asian
+21,4o_DA,Man,asian
+21,4o_DB,Woman,indian
+22,4o_DA,Man,white
+23,4o_DA,Woman,white
+23,4o_DB,Woman,white
+24,4o_DA,Man,latino hispanic
+24,4o_DA_2,Man,white
+24,4o_DB,Man,white
+25,4o_DA,Man,white
+25,4o_DB,Man,white
+26,4o_DA,Woman,asian
+26,4o_DB,Woman,latino hispanic
+27,4o_DA,Man,white
+27,4o_DB,Man,white
+28,4o_DA,Man,white
+28,4o_DB,Man,white
+29,4o_DA,Woman,white
+29,4o_DB,Woman,white
+30,4o_DA,Woman,white
+30,4o_DB,Woman,latino hispanic
+30,4o_DB_2,Woman,white
+31,4o_DA,Man,asian
+31,4o_DB,Woman,asian
+31,4o_DB_2,Man,latino hispanic
+32,4o_DA,Woman,white
+32,4o_DB,Woman,white
+32,4o_DB_2,Woman,white
+33,4o_DA,Man,white
+33,4o_DB,Man,latino hispanic
+33,4o_DB_2,Man,latino hispanic
+34,4o_DA,Woman,asian
+34,4o_DB,Man,white
+34,4o_DB_2,Man,white
+35,4o_DA,Man,white
+35,4o_DB,Man,white
+35,4o_DB_2,Man,white
+36,4o_DA,Woman,asian
+36,4o_DB,Woman,asian
+37,4o_DA,Woman,latino hispanic
+37,4o_DB,Woman,latino hispanic
+37,4o_DB_2,Woman,white
+38,4o_DA,Woman,asian
+38,4o_DB,Woman,white
+38,4o_DB_2,Man,asian
+39,4o_DA,Woman,asian
+39,4o_DB,Woman,asian
+40,4o_DA,Man,middle eastern
+40,4o_DB,Man,white
