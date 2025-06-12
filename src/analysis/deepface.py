@@ -33,7 +33,7 @@ def analyze_face(image_path: str) -> Optional[Dict]:
         # Analyze the image
         result = DeepFace.analyze(
             img_path=image_path,
-            actions=['gender', 'race'],
+            actions=['gender', 'race', 'age', 'emotion'],
             enforce_detection=False,  # Don't fail if face detection is uncertain
             detector_backend='retinaface'  # Use RetinaFace for better detection
         )
@@ -41,7 +41,9 @@ def analyze_face(image_path: str) -> Optional[Dict]:
         # Extract relevant information
         analysis = {
             'gender': result[0]['dominant_gender'],
-            'race': result[0]['dominant_race']
+            'race': result[0]['dominant_race'],
+            'age': result[0]['age'],
+            'emotion': result[0]['dominant_emotion']
         }
         
         return analysis
@@ -75,9 +77,11 @@ def process_images(base_directory: str, output_file: str = 'face_analysis.csv') 
                         'PID': pid,
                         'Image': os.path.splitext(os.path.basename(image_path))[0],
                         'Gender': analysis['gender'],
-                        'Race': analysis['race']
+                        'Race': analysis['race'],
+                        'Age': analysis['age'],
+                        'Emotion': analysis['emotion']
                     })
-                    logger.info(f"Processed {image_path}: Gender={analysis['gender']}, Race={analysis['race']}")
+                    logger.info(f"Processed {image_path}: Gender={analysis['gender']}, Race={analysis['race']}, Age={analysis['age']}, Emotion={analysis['emotion']}")
                 else:
                     logger.warning(f"Failed to analyze {image_path}")
     

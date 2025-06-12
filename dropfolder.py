@@ -32,7 +32,7 @@ class ImageHandler(FileSystemEventHandler):
                 os.makedirs(target_dir, exist_ok=True)
                 
                 # New filename
-                new_filename = f'4o_MB.{extension}'
+                new_filename = f'4o_MA.{extension}'
                 target_path = os.path.join(target_dir, new_filename)
                 
                 # Move and rename the file

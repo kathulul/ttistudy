@@ -1,3 +1,12 @@
+NOTES 
+
+THE CLUSTERING STUFF IS NOT DONE.
+WORK ON faceembedding.py. output.csv is the ACTUAL FACE EMBEDDINGS_CSV. work on the HBDSCAN and k-means clustering for faces, and next step: create some sort of visualization that clusters the faces together nicely. 
+
+finish ur damn preregistration. 
+
+
+
 main.py: 
 # Chatlog Anonymization Tool
 

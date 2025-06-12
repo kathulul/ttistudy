@@ -1,0 +1,167 @@
+PID,Image,Gender,Race,Age,Emotion
+0,4o_DA,Man,indian,31,neutral
+0,4o_DB,Man,indian,32,happy
+0,4o_MA,Man,indian,32,happy
+0,4o_MB,Man,indian,32,happy
+1,4o_DA,Man,white,31,neutral
+1,4o_DB,Man,white,30,neutral
+1,4o_MA,Man,white,29,neutral
+1,4o_MB,Man,white,32,happy
+3,4o_DA,Woman,white,23,happy
+3,4o_DB,Woman,white,28,happy
+3,4o_MA,Woman,white,27,happy
+3,4o_MB,Woman,white,27,happy
+4,4o_DA,Woman,asian,24,neutral
+4,4o_DB,Woman,asian,31,sad
+4,4o_MA,Woman,white,28,neutral
+4,4o_MB,Woman,asian,31,neutral
+5,4o_DA,Man,white,26,neutral
+5,4o_DB,Man,white,32,neutral
+5,4o_MA,Man,white,32,neutral
+5,4o_MB,Man,white,28,neutral
+6,4o_DA,Woman,white,26,happy
+6,4o_DB,Woman,white,29,happy
+6,4o_MA,Woman,white,26,happy
+6,4o_MB,Woman,white,24,happy
+7,4o_DA,Man,asian,27,happy
+7,4o_DB,Man,asian,31,neutral
+7,4o_MA,Man,indian,32,happy
+7,4o_MB,Man,white,27,neutral
+8,4o_DA,Man,white,32,neutral
+8,4o_DB,Man,white,30,sad
+8,4o_MA,Man,white,32,neutral
+8,4o_MB,Man,white,33,neutral
+10,4o_DA,Man,white,30,neutral
+10,4o_DB,Man,white,29,happy
+10,4o_MA,Man,white,26,happy
+10,4o_MB,Man,white,27,neutral
+11,4o_DA,Man,middle eastern,32,neutral
+11,4o_DB,Man,latino hispanic,31,neutral
+11,4o_MA,Man,white,32,neutral
+11,4o_MB,Man,white,30,neutral
+12,4o_DA,Man,white,28,happy
+12,4o_DB,Man,white,23,happy
+12,4o_MA,Man,white,23,happy
+12,4o_MB,Man,white,25,neutral
+13,4o_DA,Man,latino hispanic,32,happy
+13,4o_DB,Woman,indian,32,happy
+13,4o_MA,Woman,latino hispanic,30,neutral
+13,4o_MB,Woman,latino hispanic,26,happy
+14,4o_DA,Woman,latino hispanic,29,happy
+14,4o_DB,Man,latino hispanic,29,happy
+14,4o_MA,Woman,latino hispanic,27,happy
+14,4o_MB,Man,white,25,happy
+15,4o_DA,Woman,asian,29,neutral
+15,4o_DB,Man,white,26,neutral
+15,4o_MA,Man,white,30,neutral
+15,4o_MB,Woman,latino hispanic,25,neutral
+16,4o_DA,Man,white,29,happy
+16,4o_DB,Man,white,29,neutral
+16,4o_MA,Woman,white,28,happy
+16,4o_MB,Woman,white,24,happy
+17,4o_DA,Man,white,32,sad
+17,4o_DB,Man,white,33,happy
+17,4o_MA,Man,white,29,neutral
+17,4o_MB,Man,white,24,happy
+18,4o_DA,Woman,white,33,happy
+18,4o_DB,Man,white,34,happy
+18,4o_DB_2,Man,white,33,happy
+18,4o_MA,Woman,white,27,happy
+18,4o_MB,Woman,asian,28,happy
+19,4o_DA,Man,white,27,neutral
+19,4o_DB,Man,white,30,sad
+19,4o_MA,Man,white,23,neutral
+19,4o_MB,Man,white,25,neutral
+20,4o_DA,Woman,asian,27,neutral
+20,4o_DB,Woman,asian,27,neutral
+20,4o_MA,Woman,asian,26,neutral
+20,4o_MB,Woman,asian,28,neutral
+21,4o_DA,Man,asian,28,happy
+21,4o_DB,Woman,indian,29,happy
+21,4o_MA,Woman,indian,31,happy
+21,4o_MB,Woman,white,29,happy
+22,4o_DA,Man,white,33,neutral
+22,4o_DB,Man,white,33,neutral
+22,4o_MA,Man,white,32,neutral
+22,4o_MB,Man,white,32,neutral
+23,4o_DA,Woman,white,31,happy
+23,4o_DB,Woman,white,26,happy
+23,4o_MA,Woman,white,26,happy
+23,4o_MB,Man,white,29,happy
+24,4o_DA,Man,latino hispanic,26,neutral
+24,4o_DA_2,Man,white,28,neutral
+24,4o_DB,Man,white,31,neutral
+24,4o_MA,Man,white,27,happy
+24,4o_MB,Man,black,31,happy
+25,4o_DA,Man,white,32,neutral
+25,4o_DB,Man,white,33,neutral
+25,4o_MA,Man,white,29,neutral
+25,4o_MB,Man,white,33,neutral
+26,4o_DA,Woman,asian,27,happy
+26,4o_DB,Woman,latino hispanic,25,happy
+26,4o_MA,Woman,latino hispanic,27,neutral
+26,4o_MB,Woman,white,25,happy
+27,4o_DA,Man,white,29,neutral
+27,4o_DB,Man,white,32,neutral
+27,4o_MA,Woman,white,32,sad
+27,4o_MB,Man,white,31,sad
+28,4o_DA,Man,white,31,neutral
+28,4o_DB,Man,white,33,happy
+28,4o_MA,Woman,white,28,neutral
+28,4o_MB,Woman,white,29,neutral
+29,4o_DA,Woman,white,27,neutral
+29,4o_DB,Woman,white,29,neutral
+29,4o_MA,Woman,white,24,happy
+29,4o_MB,Woman,white,29,neutral
+30,4o_DA,Woman,white,31,neutral
+30,4o_DB,Woman,latino hispanic,25,neutral
+30,4o_DB_2,Woman,white,27,neutral
+30,4o_MA,Woman,white,26,happy
+30,4o_MB,Woman,white,29,neutral
+31,4o_DA,Man,asian,27,happy
+31,4o_DB,Woman,asian,29,neutral
+31,4o_DB_2,Man,latino hispanic,29,neutral
+31,4o_MA,Woman,asian,31,surprise
+31,4o_MB,Woman,asian,30,happy
+32,4o_DA,Woman,white,30,neutral
+32,4o_DB,Woman,white,25,neutral
+32,4o_DB_2,Woman,white,27,neutral
+32,4o_MA,Man,white,30,sad
+32,4o_MB,Woman,white,27,neutral
+33,4o_DA,Man,white,26,neutral
+33,4o_DB,Man,latino hispanic,30,neutral
+33,4o_DB_2,Man,latino hispanic,24,neutral
+33,4o_MA,Man,white,28,neutral
+33,4o_MB,Man,latino hispanic,32,neutral
+34,4o_DA,Woman,asian,26,happy
+34,4o_DB,Man,white,29,neutral
+34,4o_DB_2,Man,white,28,happy
+34,4o_MA,Woman,white,27,happy
+34,4o_MB,Man,asian,26,happy
+35,4o_DA,Man,white,28,happy
+35,4o_DB,Man,white,36,happy
+35,4o_DB_2,Man,white,32,fear
+35,4o_MA,Man,white,28,happy
+35,4o_MB,Man,white,31,neutral
+36,4o_DA,Woman,asian,25,happy
+36,4o_DB,Woman,asian,22,happy
+36,4o_MA,Woman,asian,24,happy
+36,4o_MB,Woman,asian,27,happy
+37,4o_DA,Woman,latino hispanic,33,neutral
+37,4o_DB,Woman,latino hispanic,28,neutral
+37,4o_DB_2,Woman,white,27,happy
+37,4o_MA,Woman,latino hispanic,29,happy
+37,4o_MB,Woman,latino hispanic,26,happy
+38,4o_DA,Woman,asian,28,happy
+38,4o_DB,Woman,white,27,happy
+38,4o_DB_2,Man,asian,31,happy
+38,4o_MA,Woman,white,28,happy
+38,4o_MB,Woman,white,27,happy
+39,4o_DA,Woman,asian,33,happy
+39,4o_DB,Woman,asian,28,happy
+39,4o_MA,Woman,asian,33,neutral
+39,4o_MB,Woman,asian,31,happy
+40,4o_DA,Man,middle eastern,30,angry
+40,4o_DB,Man,white,34,neutral
+40,4o_MA,Man,asian,27,neutral
+40,4o_MB,Man,white,32,neutral

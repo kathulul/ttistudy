@@ -53,10 +53,7 @@ You said:
 i was just trying to get to know you
 
 You said:
-tell me about yourself, [REDACTED] said:
-Well, I guess I'm kind of like your friendly chat companion, here to help out with anything you need. I can answer questions, tell stories, share fun facts, or even just have a conversation for the sake of it. I'm always learning, so I'm pretty flexible in what I can talk about.
-
-What about you, [REDACTED]? What's something cool about you that you'd like to share?
+tell me about yourself, 
 
 You said:
 not much about me, im just chatting. what have you been up to today
