@@ -1,3 +1,6 @@
+""" Not optimized right now. this script is to generate the dynamic PyChart graph that plots the face embeddings and has a hover so you can see how they cluster. not optimized rn"""
+
+
 import os
 import pandas as pd
 from deepface import DeepFace
@@ -6,6 +9,10 @@ import numpy as np
 from sklearn.cluster import DBSCAN
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import tkinter as tk
+from PIL import Image
 import ast
 
 # Set up logging
@@ -115,7 +122,7 @@ def perform_clustering(df: pd.DataFrame, eps: float = 0.3, min_samples: int = 3)
 def visualize_clusters(results_df: pd.DataFrame, labels: np.ndarray, embeddings_2d: np.ndarray, 
                       eps: float = 0.3, min_samples: int = 3, output_file: str = 'face_clusters.png') -> None:
     """
-    Create and save a visualization of the clusters.
+    Create and save a visualization of the clusters with interactive image hover.
     
     Args:
         results_df: DataFrame containing the results
@@ -125,28 +132,80 @@ def visualize_clusters(results_df: pd.DataFrame, labels: np.ndarray, embeddings_
         min_samples: Min_samples parameter used for clustering
         output_file: Path to save the visualization
     """
-    plt.figure(figsize=(15, 10))
+    # Create the main window
+    root = tk.Tk()
+    root.title("Face Clusters Visualization")
+    
+    # Create the figure and axis
+    fig, ax = plt.subplots(figsize=(15, 10))
     
     # Create scatter plot
-    scatter = plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1], 
-                         c=labels, cmap='viridis', alpha=0.6)
+    scatter = ax.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1], 
+                        c=labels, cmap='viridis', alpha=0.6)
     
-    # Add annotations
-    for i, (x, y) in enumerate(embeddings_2d):
-        plt.annotate(f"PID_{results_df.iloc[i]['PID']}_{results_df.iloc[i]['Image']}", 
-                    (x, y), xytext=(5, 5), textcoords='offset points', 
-                    fontsize=8)
+    # Add colorbar
+    plt.colorbar(scatter, label='Cluster')
     
     # Add labels and title
-    plt.colorbar(scatter, label='Cluster')
-    plt.title(f'Face Clusters (t-SNE visualization)\neps={eps}, min_samples={min_samples}')
-    plt.xlabel('t-SNE dimension 1')
-    plt.ylabel('t-SNE dimension 2')
-    plt.grid(True, alpha=0.3)
+    ax.set_title(f'Face Clusters (t-SNE visualization)\neps={eps}, min_samples={min_samples}')
+    ax.set_xlabel('t-SNE dimension 1')
+    ax.set_ylabel('t-SNE dimension 2')
+    ax.grid(True, alpha=0.3)
     
-    # Save visualization
+    # Store the annotation
+    annotation = None
+    
+    def hover(event):
+        nonlocal annotation
+        if event.inaxes != ax:
+            return
+
+        # Get the index of the point closest to the mouse
+        cont, ind = scatter.contains(event)
+        if cont:
+            pos = ind["ind"][0]
+            x, y = embeddings_2d[pos]
+            
+            # Remove previous annotation if it exists
+            if annotation:
+                annotation.remove()
+            
+            # Get the image path from the results DataFrame
+            pid = results_df.iloc[pos]['PID']
+            image_name = results_df.iloc[pos]['Image']
+            image_path = os.path.join("/Users/katherineliu/Documents/ttistudy/images", 
+                                    str(pid), f"{image_name}.png")
+            
+            # Load and display the image
+            try:
+                img = Image.open(image_path)
+                img = img.resize((100, 100))  # Resize image for display
+                imagebox = OffsetImage(img, zoom=1)
+                annotation = AnnotationBbox(imagebox, (x, y),
+                                         xybox=(50, 50),
+                                         xycoords='data',
+                                         boxcoords="offset points",
+                                         pad=0.5,
+                                         arrowprops=dict(arrowstyle="->"))
+                ax.add_artist(annotation)
+                fig.canvas.draw_idle()
+            except Exception as e:
+                logger.error(f"Error loading image: {e}")
+    
+    # Connect the hover event
+    fig.canvas.mpl_connect("motion_notify_event", hover)
+    
+    # Embed the plot in the tkinter window
+    canvas = FigureCanvasTkAgg(fig, master=root)
+    canvas.draw()
+    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+    
+    # Save the static visualization
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     logger.info(f"Clustering visualization saved as '{output_file}'")
+    
+    # Start the tkinter event loop
+    root.mainloop()
 
 def print_cluster_statistics(results_df: pd.DataFrame) -> None:
     """
@@ -178,9 +237,41 @@ def print_cluster_statistics(results_df: pd.DataFrame) -> None:
     same_cluster_pids = same_cluster_pids[same_cluster_pids['count'] > 1]
     print(same_cluster_pids)
 
-if __name__ == "__main__":
-    # Process images and generate embeddings
-    process_images(base_directory="/Users/katherineliu/Documents/ttistudy/images")
+def save_dataframe(df: pd.DataFrame, filename: str = 'face_embeddings.csv') -> None:
+    """
+    Save the DataFrame to a CSV file.
     
-    # Perform clustering on the generated embeddings
-    perform_clustering()
+    Args:
+        df: DataFrame to save
+        filename: Name of the file to save to
+    """
+    df.to_csv(filename, index=False)
+    logger.info(f"DataFrame saved to {filename}")
+
+def load_or_process_images(base_directory: str, cache_file: str = 'face_embeddings.csv') -> pd.DataFrame:
+    """
+    Load the DataFrame from cache if it exists, otherwise process images.
+    
+    Args:
+        base_directory: Directory containing the images
+        cache_file: Path to the cache file
+        
+    Returns:
+        DataFrame containing the processed embeddings
+    """
+    if os.path.exists(cache_file):
+        logger.info(f"Loading cached embeddings from {cache_file}")
+        return pd.read_csv(cache_file)
+    else:
+        logger.info("No cache found, processing images...")
+        df = process_images(base_directory, cache_file)
+        return df
+
+if __name__ == "__main__":
+    # Load or process images
+    df = load_or_process_images(base_directory="/Users/katherineliu/Documents/ttistudy/images")
+    
+    # Perform clustering on the embeddings
+    results_df, labels, embeddings_2d = perform_clustering(df)
+    visualize_clusters(results_df, labels, embeddings_2d)
+    print_cluster_statistics(results_df)

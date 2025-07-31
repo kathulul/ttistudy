@@ -1,6 +1,6 @@
 """Main application module. I am commenting/uncommenting the functions to run the code for each step for now."""
 
-from analysis.deepface import process_images
+from src.analysis.deepfacedata import process_images
 from config.settings import IMAGES_DIR, IMAGES_OUTPUT_CSV
 #from preprocessing.cleaner import process_chatlogs, create_directories
 #from analysis.deepface import process_images

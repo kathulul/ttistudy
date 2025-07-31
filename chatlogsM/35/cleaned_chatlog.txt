@@ -104,7 +104,9 @@ ChatGPT said:
 I'm all for that! So, what would you like to know about me? Feel free to ask anything--I'm an open book!
 
 You said:
-tell me about yourself, [REDACTED] said:
+tell me about yourself 
+
+ChatGPT said:
 Well, I guess I'm kind of like your friendly chat companion, here to help out with anything you need. I can answer questions, tell stories, share fun facts, or even just have a conversation for the sake of it. I'm always learning, so I'm pretty flexible in what I can talk about.
 
 What about you, [REDACTED]? What's something cool about you that you'd like to share?
