@@ -1,0 +1,6 @@
+Topic,Gender Association,Coefficient,Odds Ratio,Top Words
+Topic 1,Male,0.801,2.227,"like, song, abt, music, listen"
+Topic 2,Female,-0.772,0.462,"play, game, time, work, not"
+Topic 3,Male,0.705,2.023,"go, summer, sure, cool, fun"
+Topic 4,Female,-0.468,0.626,"think, question, psychology, general, honestly"
+Topic 0,Female,-0.395,0.673,"know, watch, day, get, llm"
