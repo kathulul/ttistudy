@@ -6,9 +6,9 @@ Runs preprocessing, topic modeling, and lens model analysis in sequence.
 import os
 import sys
 from preprocessing import run_preprocessing
-from topic_modeling import run_topic_modeling
+from nmf import run_topic_modeling
 from lens_model import run_lens_model
-from config import OUTPUT_DIR
+from config import PREPROCESSING_OUTPUT_DIR, NMF_OUTPUT_DIR, LENS_MODEL_OUTPUT_DIR
 
 def main():
     """
@@ -17,9 +17,6 @@ def main():
     print("="*60)
     print("LENS MODELING PIPELINE")
     print("="*60)
-    
-    # Ensure output directory exists
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
     
     try:
         # Step 1: Preprocessing
@@ -43,20 +40,26 @@ def main():
         print("✅ PIPELINE COMPLETED SUCCESSFULLY!")
         print("="*60)
         
-        print(f"\nOutput files saved in: {OUTPUT_DIR}/")
-        print("- transcripts.csv: Cleaned transcripts with PIDs")
-        print("- topic_weights.csv: Normalized topic weights per transcript")
-        print("- topic_words.csv: Top words for each topic")
-        print("- cue_matrix.csv: Topic weights merged with gender data")
-        print("- lens_model_feature_importance.csv: Topic importance for gender prediction")
-        print("- lens_model_performance.txt: Model performance summary")
+        print(f"\nOutput files saved in:")
+        print(f"- {PREPROCESSING_OUTPUT_DIR}/transcripts.csv: Cleaned transcripts with PIDs")
+        print(f"- {NMF_OUTPUT_DIR}/topic_weights.csv: Normalized topic weights per transcript")
+        print(f"- {NMF_OUTPUT_DIR}/topic_words.csv: Top words for each topic")
+        
+        if cue_matrix is not None and lens_results is not None:
+            print(f"- {LENS_MODEL_OUTPUT_DIR}/cue_matrix.csv: Topic weights merged with gender data")
+            print(f"- {LENS_MODEL_OUTPUT_DIR}/lens_model_feature_importance.csv: Topic importance for gender prediction")
+            print(f"- {LENS_MODEL_OUTPUT_DIR}/lens_model_performance.txt: Model performance summary")
         
         print(f"\nResults summary:")
         print(f"- Number of transcripts: {len(transcript_ids)}")
         print(f"- Number of topics: {W_normalized.shape[1]}")
         print(f"- Vocabulary size: {len(vectorizer.vocabulary_)}")
-        print(f"- Number of gender judgments: {len(cue_matrix)}")
-        print(f"- Lens model accuracy: {lens_results['accuracy']:.3f}")
+        
+        if cue_matrix is not None and lens_results is not None:
+            print(f"- Number of gender judgments: {len(cue_matrix)}")
+            print(f"- Lens model accuracy: {lens_results['accuracy']:.3f}")
+        else:
+            print("- Lens model analysis: Skipped (DeepFace disabled)")
         
     except Exception as e:
         print(f"\n ERROR: {str(e)}")

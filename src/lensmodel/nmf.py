@@ -5,7 +5,7 @@ Topic modeling module using Non-negative Matrix Factorization (NMF).
 import pandas as pd
 import numpy as np
 from sklearn.decomposition import NMF
-from config import NMF_PARAMS, OUTPUT_DIR, TOPIC_WEIGHTS_FILE, TOPIC_WORDS_FILE, TOP_WORDS_PER_TOPIC
+from config import NMF_PARAMS, NMF_OUTPUT_DIR, TOPIC_WEIGHTS_FILE, TOPIC_WORDS_FILE, TOP_WORDS_PER_TOPIC
 import os
 
 def run_topic_modeling(tfidf_matrix, vectorizer, transcript_ids):
@@ -32,7 +32,7 @@ def run_topic_modeling(tfidf_matrix, vectorizer, transcript_ids):
     # Normalize topic weights so each row sums to 1
     W_normalized = W / (W.sum(axis=1, keepdims=True) + 1e-10)
     
-    # Get top words for each topic
+    # Get top words for each topic and prepare data for CSV
     feature_names = vectorizer.get_feature_names_out()
     top_words = {}
     topic_words_data = []
@@ -40,10 +40,11 @@ def run_topic_modeling(tfidf_matrix, vectorizer, transcript_ids):
     for topic_idx in range(H.shape[0]):
         # Get indices of top words for this topic
         top_indices = H[topic_idx].argsort()[-TOP_WORDS_PER_TOPIC:][::-1]
-        top_words[topic_idx] = [feature_names[i] for i in top_indices]
+        topic_words = [feature_names[i] for i in top_indices]
+        top_words[topic_idx] = topic_words
         
-        # Prepare data for CSV
-        for rank, word in enumerate(top_words[topic_idx], 1):
+        # Prepare data for CSV in the same loop
+        for rank, word in enumerate(topic_words, 1):
             topic_words_data.append({
                 'topic_id': topic_idx,
                 'rank': rank,
@@ -58,11 +59,15 @@ def run_topic_modeling(tfidf_matrix, vectorizer, transcript_ids):
         columns=[f'topic_{i}' for i in range(W.shape[1])]
     )
     topic_weights_df.index.name = 'pid'
-    topic_weights_df.to_csv(os.path.join(OUTPUT_DIR, TOPIC_WEIGHTS_FILE))
+    
+    # Create NMF output directory
+    os.makedirs(NMF_OUTPUT_DIR, exist_ok=True)
+    
+    topic_weights_df.to_csv(os.path.join(NMF_OUTPUT_DIR, TOPIC_WEIGHTS_FILE))
     
     # Save topic words
     topic_words_df = pd.DataFrame(topic_words_data)
-    topic_words_df.to_csv(os.path.join(OUTPUT_DIR, TOPIC_WORDS_FILE), index=False)
+    topic_words_df.to_csv(os.path.join(NMF_OUTPUT_DIR, TOPIC_WORDS_FILE), index=False)
     
     print(f"Topic weights saved to: {TOPIC_WEIGHTS_FILE}")
     print(f"Topic words saved to: {TOPIC_WORDS_FILE}")

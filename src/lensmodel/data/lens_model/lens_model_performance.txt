@@ -1,0 +1,31 @@
+LENS MODEL ANALYSIS RESULTS
+==================================================
+
+Model Accuracy: 0.724
+
+Classification Report:
+              precision    recall  f1-score   support
+
+         Man       0.74      0.75      0.74        83
+       Woman       0.71      0.70      0.70        73
+
+    accuracy                           0.72       156
+   macro avg       0.72      0.72      0.72       156
+weighted avg       0.72      0.72      0.72       156
+
+Confusion Matrix:
+[[62 21]
+ [22 51]]
+
+Top 10 Most Important Topics:
+       topic  coefficient  abs_coefficient     odds_ratio
+3    topic_3    11.743073        11.743073  125878.567300
+17  topic_17    -9.493638         9.493638       0.000075
+15  topic_15    -9.493638         9.493638       0.000075
+14  topic_14    -9.041837         9.041837       0.000118
+18  topic_18    -9.041837         9.041837       0.000118
+8    topic_8     3.285361         3.285361      26.718636
+9    topic_9     3.285156         3.285156      26.713155
+4    topic_4     2.449492         2.449492      11.582466
+5    topic_5     2.447288         2.447288      11.556963
+16  topic_16     2.447288         2.447288      11.556963

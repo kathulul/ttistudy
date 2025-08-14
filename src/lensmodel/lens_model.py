@@ -6,10 +6,9 @@ Merges topic weights with DeepFace gender perception data and performs lens mode
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import os
-from config import DEEPFACE_CSV_PATH, OUTPUT_DIR, CUE_MATRIX_FILE, LENS_MODEL_PARAMS
+from config import DEEPFACE_CSV_PATH, LENS_MODEL_OUTPUT_DIR, CUE_MATRIX_FILE, LENS_MODEL_PARAMS, NMF_OUTPUT_DIR, DEEPFACE_CONFIG
 
 def run_lens_model():
     """
@@ -23,6 +22,12 @@ def run_lens_model():
     print("="*60)
     
     try:
+        # Check if DeepFace analysis is enabled
+        if not DEEPFACE_CONFIG['enabled']:
+            print("DeepFace analysis is disabled. Skipping lens model analysis.")
+            print("To enable, set DEEPFACE_CONFIG['enabled'] = True in config.py")
+            return None, None
+        
         # Load DeepFace gender perception data
         print("Loading DeepFace gender perception data...")
         if not os.path.exists(DEEPFACE_CSV_PATH):
@@ -39,7 +44,7 @@ def run_lens_model():
         
         # Load topic weights
         print("Loading topic weights...")
-        topic_weights_path = os.path.join(OUTPUT_DIR, "topic_weights.csv")
+        topic_weights_path = os.path.join(NMF_OUTPUT_DIR, "topic_weights.csv")
         if not os.path.exists(topic_weights_path):
             raise FileNotFoundError(f"Topic weights not found at {topic_weights_path}")
         
@@ -76,6 +81,31 @@ def run_lens_model():
         }).sort_values('abs_coefficient', ascending=False)
         feature_importance['odds_ratio'] = np.exp(feature_importance['coefficient'])
         
+        # Create lens model output directory
+        os.makedirs(LENS_MODEL_OUTPUT_DIR, exist_ok=True)
+        
+        # Save all results
+        print("Saving lens model results...")
+        cue_matrix.to_csv(os.path.join(LENS_MODEL_OUTPUT_DIR, CUE_MATRIX_FILE), index=False)
+        
+        feature_importance_path = os.path.join(LENS_MODEL_OUTPUT_DIR, "lens_model_feature_importance.csv")
+        feature_importance.to_csv(feature_importance_path, index=False)
+        
+        # Save performance summary
+        performance_path = os.path.join(LENS_MODEL_OUTPUT_DIR, "lens_model_performance.txt")
+        with open(performance_path, 'w') as f:
+            f.write("LENS MODEL ANALYSIS RESULTS\n")
+            f.write("=" * 50 + "\n\n")
+            f.write(f"Model Accuracy: {accuracy:.3f}\n\n")
+            f.write("Classification Report:\n")
+            f.write(classification_report(y, y_pred))
+            f.write("\nConfusion Matrix:\n")
+            f.write(str(confusion_matrix(y, y_pred)))
+            f.write("\n\nTop 10 Most Important Topics:\n")
+            f.write(feature_importance.head(10).to_string())
+        
+        print(f"Results saved to {LENS_MODEL_OUTPUT_DIR}/")
+        
         results = {
             'model': model,
             'accuracy': accuracy,
@@ -87,29 +117,6 @@ def run_lens_model():
             'y_pred': y_pred,
             'y_pred_proba': y_pred_proba
         }
-        
-        # Save results
-        print("Saving lens model results...")
-        cue_matrix.to_csv(os.path.join(OUTPUT_DIR, CUE_MATRIX_FILE), index=False)
-        
-        feature_importance_path = os.path.join(OUTPUT_DIR, "lens_model_feature_importance.csv")
-        results['feature_importance'].to_csv(feature_importance_path, index=False)
-        
-        performance_path = os.path.join(OUTPUT_DIR, "lens_model_performance.txt")
-        with open(performance_path, 'w') as f:
-            f.write("LENS MODEL ANALYSIS RESULTS\n")
-            f.write("=" * 50 + "\n\n")
-            f.write(f"Model Accuracy: {results['accuracy']:.3f}\n\n")
-            f.write("Classification Report:\n")
-            f.write(results['classification_report'])
-            f.write("\nConfusion Matrix:\n")
-            f.write(str(results['confusion_matrix']))
-            f.write("\n\nTop 10 Most Important Topics:\n")
-            f.write(results['feature_importance'].head(10).to_string())
-        
-        print(f"Cue matrix saved to: {CUE_MATRIX_FILE}")
-        print(f"Feature importance saved to: lens_model_feature_importance.csv")
-        print(f"Performance summary saved to: lens_model_performance.txt")
         
         # Print summary
         print("\n" + "="*60)

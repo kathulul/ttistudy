@@ -8,7 +8,10 @@ import pandas as pd
 import spacy
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
-from config import CHATLOGS_PATH, TFIDF_PARAMS, SPACY_MODEL, OUTPUT_DIR
+from config import (
+    CHATLOGS_PATH, TFIDF_PARAMS, SPACY_MODEL, 
+    PREPROCESSING_OUTPUT_DIR
+)
 
 # Load spaCy model
 try:
@@ -81,7 +84,9 @@ def run_preprocessing():
     
     # Load all transcripts from chatlogsM folders
     transcripts = {}
-    for pid in range(0, 41):  # Changed from range(1, 41) to range(0, 41)
+    missing_transcripts = []
+    
+    for pid in range(0, 41):
         folder_path = os.path.join(CHATLOGS_PATH, str(pid))
         file_path = os.path.join(folder_path, "cleaned_monologue.txt")
         
@@ -89,8 +94,11 @@ def run_preprocessing():
             with open(file_path, 'r', encoding='utf-8') as f:
                 transcripts[pid] = f.read().strip()
         else:
-            print(f"Warning: No transcript found for PID {pid}")
+            missing_transcripts.append(pid)
             transcripts[pid] = ""
+    
+    if missing_transcripts:
+        print(f"Warning: No transcripts found for PIDs: {missing_transcripts}")
     
     print(f"Loaded {len(transcripts)} transcripts")
     
@@ -98,27 +106,29 @@ def run_preprocessing():
     transcript_ids = list(transcripts.keys())
     texts = [transcripts[pid] for pid in transcript_ids]
     
-    # Clean and lemmatize texts
-    print("Cleaning transcripts...")
-    cleaned_texts = [clean_text(text) for text in texts]
-    
-    print("Lemmatizing transcripts...")
-    lemmatized_texts = [lemmatize_text(text) for text in cleaned_texts]
+    # Clean and lemmatize texts in one pass
+    print("Cleaning and lemmatizing transcripts...")
+    cleaned_lemmatized_texts = [lemmatize_text(clean_text(text)) for text in texts]
     
     # Create TF-IDF matrix
     print("Creating TF-IDF matrix...")
+    print(f"TF-IDF parameters: {TFIDF_PARAMS}")
     vectorizer = TfidfVectorizer(**TFIDF_PARAMS)
-    tfidf_matrix = vectorizer.fit_transform(lemmatized_texts)
+    tfidf_matrix = vectorizer.fit_transform(cleaned_lemmatized_texts)
     
     print(f"TF-IDF matrix shape: {tfidf_matrix.shape}")
     print(f"Vocabulary size: {len(vectorizer.vocabulary_)}")
     
-    # Save cleaned transcripts
+    # Create preprocessing output directory and save results
+    os.makedirs(PREPROCESSING_OUTPUT_DIR, exist_ok=True)
+    
+    # Save cleaned transcripts (using original cleaned texts for readability)
+    cleaned_texts = [clean_text(text) for text in texts]
     transcript_df = pd.DataFrame({
         'pid': transcript_ids,
         'transcript': cleaned_texts
     })
-    transcript_df.to_csv(os.path.join(OUTPUT_DIR, "transcripts.csv"), index=False)
+    transcript_df.to_csv(os.path.join(PREPROCESSING_OUTPUT_DIR, "transcripts.csv"), index=False)
     
     print("Preprocessing completed!")
     return tfidf_matrix, vectorizer, transcript_ids

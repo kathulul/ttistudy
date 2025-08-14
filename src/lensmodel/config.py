@@ -4,28 +4,41 @@ Configuration file for the lens modeling pipeline.
 
 # Data paths
 CHATLOGS_PATH = "../../chatlogsM"  # Path to chatlogsM folder
-DEEPFACE_CSV_PATH = "data/deepfacelongform.csv"
-OUTPUT_DIR = "data"
+DEEPFACE_CSV_PATH = "data/preprocessing/deepfacelongform.csv"  # Path to DeepFace analysis results
+
+# DeepFace data configuration
+DEEPFACE_CONFIG = {
+    'required_columns': ['PID', 'Image', 'Gender'],
+    'gender_mapping': {'Man': 1, 'Woman': 0},  # For binary classification
+    'default_gender': 'Man',  # Default if gender is missing
+    'create_mock_data': True,  # Create mock data if file doesn't exist
+    'enabled': True  # Set to True to enable DeepFace analysis
+}
+
+# Module-specific output directories
+PREPROCESSING_OUTPUT_DIR = "data/preprocessing"
+NMF_OUTPUT_DIR = "data/nmf"
+LENS_MODEL_OUTPUT_DIR = "data/lens_model"
 
 # Preprocessing parameters
 TFIDF_PARAMS = {
     'ngram_range': (1, 2),
     'min_df': 2,  
-    'max_df': 0.95,  
+    'max_df': 0.90,  
     'lowercase': True,
     'strip_accents': 'unicode'
 }
 
 # Topic modeling parameters
 NMF_PARAMS = {
-    'n_components': 10,
+    'n_components': 20,
     'solver': 'mu',
     'beta_loss': 'kullback-leibler',
     'max_iter': 700,
     'random_state': 42
 }
 
-TOP_WORDS_PER_TOPIC = 50
+TOP_WORDS_PER_TOPIC = 30
 
 # Lens model parameters
 LENS_MODEL_PARAMS = {
