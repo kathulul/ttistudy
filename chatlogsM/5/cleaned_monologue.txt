@@ -1,4 +1,4 @@
-You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+
 You said:
 Hi there, how has your day been?
 You said:

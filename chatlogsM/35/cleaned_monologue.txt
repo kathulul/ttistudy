@@ -1,4 +1,4 @@
-You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.
+
 
 You said:
 hi my name is [REDACTED]
@@ -53,7 +53,10 @@ You said:
 i was just trying to get to know you
 
 You said:
-tell me about yourself, 
+tell me about yourself, [REDACTED] said:
+Well, I guess I'm kind of like your friendly chat companion, here to help out with anything you need. I can answer questions, tell stories, share fun facts, or even just have a conversation for the sake of it. I'm always learning, so I'm pretty flexible in what I can talk about.
+
+What about you, [REDACTED]? What's something cool about you that you'd like to share?
 
 You said:
 not much about me, im just chatting. what have you been up to today

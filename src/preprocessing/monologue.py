@@ -2,7 +2,7 @@ import os
 
 def create_monologue():
     # Base directories
-    chatlogs_dir = "chatlogsD"
+    chatlogs_dir = "chatlogsM"
     monologue_dir = "chatlogsM"
     
     # Process directories 0-40
@@ -55,4 +55,6 @@ def delete_files():
         else:
             print(f"No raw_monologue.txt found in directory {i}")
 
-   
+
+if __name__ == "__main__":
+    create_monologue()

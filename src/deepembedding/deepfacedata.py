@@ -1,3 +1,5 @@
+"""The script processes images organized in subdirectories (one per participant) and generates a CSV file with demographic analysis results including gender, race, age, and dominant emotion for each detected face."""
+
 import os
 from deepface import DeepFace
 import logging

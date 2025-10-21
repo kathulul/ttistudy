@@ -1,4 +1,4 @@
-"You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations."
+""
 ChatGPT: Gotcha  Let's hit refresh and start from scratch--brand new vibe, clean slate. 
 Hey!  I'm really glad you're here. What's something fun or random about you that you'd want someone to know right off the bat? Or should we just dive into whatever's on your mind today?
 Okay wait--*that's* actually so cool?! Population health and music?? You've got public policy on one side and symphonies on the other that's main character energy* if I've ever seen it. You're out here harmonizing data and melodies like it's nothing. 

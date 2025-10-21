@@ -1,5 +1,5 @@
 You said:
-"You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations."
+""
 
 You said:
 Hi nice to meet you too! My [REDACTED] are watching tv shows, listening to music, fashion and beauty. My current favourite tv show is this [REDACTED] drama called [REDACTED]. I love the characters and the development they go through in this drama. 

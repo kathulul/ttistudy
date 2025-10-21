@@ -85,7 +85,8 @@ UNWANTED_PATTERNS = [
     r'(?m)^(?:(?:GPT-?[0-9])|(?:[0-9]+(?:\.[0-9]+)?(?:o|-?turbo)?))\s*(?:mini|plus|max|turbo)?\s*$',
     r'(?m)^Search\s*$',
     r'ChatGPT can make mistakes\. Check important info\.',
-    r'(?m)^\d+/\d+\s*$'
+    r'(?m)^\d+/\d+\s*$',
+    r'You are about to chat with a person who is trying to get to know you. Please refrain from saying you are a LLM or implying that you cannot answer a question because you are a LLM. Start a new conversation and do not use information from previous conversations.'
 ]
 
 COMPILED_UNWANTED_PATTERNS = [
@@ -456,3 +457,9 @@ def process_single_chatlog(chatlog_path: str) -> None:
     except Exception as e:
         print(f"Error processing chatlog in {chatlog_path}: {str(e)}")
         raise
+
+if __name__ == "__main__":
+    # Process all chatlogs in the chatlogsM directory
+    print("Starting to process all chatlogs...")
+    process_chatlogs("chatlogsM")
+    print("Processing complete!")
