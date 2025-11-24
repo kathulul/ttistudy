@@ -458,8 +458,3 @@ def process_single_chatlog(chatlog_path: str) -> None:
         print(f"Error processing chatlog in {chatlog_path}: {str(e)}")
         raise
 
-if __name__ == "__main__":
-    # Process all chatlogs in the chatlogsM directory
-    print("Starting to process all chatlogs...")
-    process_chatlogs("chatlogsM")
-    print("Processing complete!")
