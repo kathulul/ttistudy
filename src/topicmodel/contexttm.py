@@ -10,6 +10,7 @@ from contextualized_topic_models.utils.data_preparation import TopicModelDataPre
 from contextualized_topic_models.models.ctm import CombinedTM
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 from collections import Counter
+from topicmodel.openai_client import OpenAIEmbedder, wants_openai_embeddings
 
 
 def prepare_chatlogs():
@@ -75,12 +76,20 @@ def estimate_truncation(unpreprocessed, max_seq_length):
     return truncated_count
 
 
+def _resolve_embedding_backend(embedding_model):
+    if wants_openai_embeddings(embedding_model):
+        print(f"  Routing embeddings through OpenAI: {embedding_model}")
+        return OpenAIEmbedder(embedding_model=embedding_model)
+    print(f"  Using local embedding model: {embedding_model}")
+    return embedding_model
+
+
 def prepare_data(unpreprocessed, preprocessed, embedding_model="paraphrase-distilroberta-base-v2", max_seq_length=512):
-    print(f"  Using embedding model: {embedding_model}")
     print(f"  Max sequence length: {max_seq_length}")
     estimate_truncation(unpreprocessed, max_seq_length)
+    embedding_backend = _resolve_embedding_backend(embedding_model)
     
-    qt = TopicModelDataPreparation(embedding_model, max_seq_length=max_seq_length)
+    qt = TopicModelDataPreparation(embedding_backend, max_seq_length=max_seq_length)
     training_dataset = qt.fit(text_for_contextual=unpreprocessed, text_for_bow=preprocessed)
     print(f"  Training dataset ready with {len(unpreprocessed)} documents")
     return training_dataset, qt
@@ -135,7 +144,7 @@ def save_ctm_results(ctm, training_dataset, retained_chatlogs, n_words_per_topic
 
 
 if __name__ == "__main__":
-    N_COMPONENTS = 2
+    N_COMPONENTS = 6
     MAX_SEQ_LENGTH = 258
     N_WORDS_PER_TOPIC = 10
     N_SAMPLES = 20
