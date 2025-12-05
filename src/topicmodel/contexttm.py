@@ -60,22 +60,6 @@ def preprocessing(chatlogs, min_df=2, max_df=0.95):
     return final_preprocessed, unpreprocessed, vocab, retained_chatlogs
 
 
-def estimate_truncation(unpreprocessed, max_seq_length):
-    """Estimate which documents may be truncated (rough estimate: 1.3 tokens per word)"""
-    truncated_count = 0
-    for doc in unpreprocessed:
-        word_count = len(doc.split())
-        estimated_tokens = word_count * 1.3
-        if estimated_tokens > max_seq_length:
-            truncated_count += 1
-    
-    if truncated_count > 0:
-        print(f"  Warning: ~{truncated_count} documents may be truncated (exceeding max_seq_length={max_seq_length})")
-    else:
-        print(f"  All documents fit within max_seq_length={max_seq_length}")
-    return truncated_count
-
-
 def prepare_data(unpreprocessed, preprocessed, embedding_model="paraphrase-distilroberta-base-v2", max_seq_length=512):
     print(f"  Max sequence length: {max_seq_length}")
     estimate_truncation(unpreprocessed, max_seq_length)
