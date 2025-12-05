@@ -76,23 +76,34 @@ def estimate_truncation(unpreprocessed, max_seq_length):
     return truncated_count
 
 
-def _resolve_embedding_backend(embedding_model):
-    if wants_openai_embeddings(embedding_model):
-        print(f"  Routing embeddings through OpenAI: {embedding_model}")
-        return OpenAIEmbedder(embedding_model=embedding_model)
-    print(f"  Using local embedding model: {embedding_model}")
-    return embedding_model
-
-
 def prepare_data(unpreprocessed, preprocessed, embedding_model="paraphrase-distilroberta-base-v2", max_seq_length=512):
     print(f"  Max sequence length: {max_seq_length}")
     estimate_truncation(unpreprocessed, max_seq_length)
-    embedding_backend = _resolve_embedding_backend(embedding_model)
     
-    qt = TopicModelDataPreparation(embedding_backend, max_seq_length=max_seq_length)
-    training_dataset = qt.fit(text_for_contextual=unpreprocessed, text_for_bow=preprocessed)
+    if wants_openai_embeddings(embedding_model):
+        print(f"  Routing embeddings through OpenAI: {embedding_model}")
+        print(f"  Computing embeddings for {len(unpreprocessed)} documents...")
+        embedder = OpenAIEmbedder(embedding_model=embedding_model)
+        contextualized_embeddings = embedder.encode(unpreprocessed, show_progress_bar=True)
+        print(f"  Embeddings shape: {contextualized_embeddings.shape}")
+        contextual_size = contextualized_embeddings.shape[1]  # Get dimension from embeddings
+        
+        qt = TopicModelDataPreparation(contextualized_model=None, max_seq_length=max_seq_length)
+        training_dataset = qt.fit(
+            text_for_contextual=unpreprocessed,
+            text_for_bow=preprocessed,
+            custom_embeddings=contextualized_embeddings
+        )
+    else:
+        print(f"  Using local embedding model: {embedding_model}")
+        # Default contextual size for standard BERT models
+        contextual_size = 768
+        qt = TopicModelDataPreparation(embedding_model, max_seq_length=max_seq_length)
+        training_dataset = qt.fit(text_for_contextual=unpreprocessed, text_for_bow=preprocessed)
+    
     print(f"  Training dataset ready with {len(unpreprocessed)} documents")
-    return training_dataset, qt
+    return training_dataset, qt, contextual_size
+
 
 
 def fit_contexttm(training_dataset, qt, num_epochs, patience, delta, n_components, contextual_size=768, batch_size=39):
@@ -148,7 +159,7 @@ if __name__ == "__main__":
     MAX_SEQ_LENGTH = 258
     N_WORDS_PER_TOPIC = 10
     N_SAMPLES = 20
-    EMBEDDING_MODEL = "paraphrase-distilroberta-base-v2"
+    EMBEDDING_MODEL = "text-embedding-3-small"
     NUM_EPOCHS = 25
     BATCH_SIZE = 39
     
@@ -160,11 +171,11 @@ if __name__ == "__main__":
     preprocessed, unpreprocessed, vocab, retained_chatlogs = preprocessing(chatlogs)
     
     print("\nPreparing data...")
-    training_dataset, qt = prepare_data(unpreprocessed, preprocessed, EMBEDDING_MODEL, MAX_SEQ_LENGTH)
+    training_dataset, qt, contextual_size = prepare_data(unpreprocessed, preprocessed, EMBEDDING_MODEL, MAX_SEQ_LENGTH)
     
     print("\nTraining model...")
 
-    ctm, qt = fit_contexttm(training_dataset, qt, NUM_EPOCHS, 0, 0, N_COMPONENTS, batch_size=BATCH_SIZE)
+    ctm, qt = fit_contexttm(training_dataset, qt, NUM_EPOCHS, 0, 0, N_COMPONENTS, contextual_size=contextual_size, batch_size=BATCH_SIZE)
     
     print("\nSaving results...")
     doc_topic_df, topic_words_df = save_ctm_results(ctm, training_dataset, retained_chatlogs, N_WORDS_PER_TOPIC, N_SAMPLES)
