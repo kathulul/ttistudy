@@ -12,6 +12,22 @@ from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 from collections import Counter
 from topicmodel.openai_client import OpenAIEmbedder, wants_openai_embeddings
 
+# load spaCy model for lemmatization
+_nlp = None
+
+def get_nlp():
+    """Lazy load spaCy model for lemmatization."""
+    global _nlp
+    if _nlp is None:
+        try:
+            import spacy
+            _nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
+        except OSError:
+            print("Warning: spaCy model 'en_core_web_sm' not found. Install with: python -m spacy download en_core_web_sm")
+            print("Falling back to preprocessing without lemmatization.")
+            _nlp = True
+    return _nlp
+
 
 def prepare_chatlogs():
     chatlogs = load_chatlogs()
@@ -36,12 +52,23 @@ def preprocessing(chatlogs, min_df=2, max_df=0.95):
                        'kinda', 'sorta', 'sort', 'let', 'lets', 'don', 'didn', 'doesn', 'wasn', 'weren']
     stopwords = set(ENGLISH_STOP_WORDS) | set(custom_stopwords)
     
+    # Filter stopwords and optionally lemmatize
+    nlp = get_nlp()
     filtered_docs = []
     word_doc_count = Counter()
-    for doc in preprocessed:
-        words = [w for w in doc.split() if w.lower() not in stopwords]
-        filtered_docs.append(words)
-        word_doc_count.update(set(words))  # Count unique words per document
+    
+    if nlp is not None and nlp is not False:
+        # Batch process with spaCy for efficiency
+        doc_texts = [' '.join(w for w in doc.split() if w.lower() not in stopwords) for doc in preprocessed]
+        for spacy_doc in nlp.pipe(doc_texts, batch_size=1000, disable=["parser", "ner"]):
+            words = [token.lemma_ for token in spacy_doc if token.is_alpha and token.lemma_.strip()]
+            filtered_docs.append(words)
+            word_doc_count.update(set(words))
+    else:
+        for doc in preprocessed:
+            words = [w for w in doc.split() if w.lower() not in stopwords]
+            filtered_docs.append(words)
+            word_doc_count.update(set(words))
     
     # Calculate document frequency thresholds
     n_docs = len(filtered_docs)
@@ -62,7 +89,6 @@ def preprocessing(chatlogs, min_df=2, max_df=0.95):
 
 def prepare_data(unpreprocessed, preprocessed, embedding_model="paraphrase-distilroberta-base-v2", max_seq_length=512):
     print(f"  Max sequence length: {max_seq_length}")
-    estimate_truncation(unpreprocessed, max_seq_length)
     
     if wants_openai_embeddings(embedding_model):
         print(f"  Routing embeddings through OpenAI: {embedding_model}")
@@ -70,7 +96,7 @@ def prepare_data(unpreprocessed, preprocessed, embedding_model="paraphrase-disti
         embedder = OpenAIEmbedder(embedding_model=embedding_model)
         contextualized_embeddings = embedder.encode(unpreprocessed, show_progress_bar=True)
         print(f"  Embeddings shape: {contextualized_embeddings.shape}")
-        contextual_size = contextualized_embeddings.shape[1]  # Get dimension from embeddings
+        contextual_size = contextualized_embeddings.shape[1]  
         
         qt = TopicModelDataPreparation(contextualized_model=None, max_seq_length=max_seq_length)
         training_dataset = qt.fit(
@@ -80,7 +106,6 @@ def prepare_data(unpreprocessed, preprocessed, embedding_model="paraphrase-disti
         )
     else:
         print(f"  Using local embedding model: {embedding_model}")
-        # Default contextual size for standard BERT models
         contextual_size = 768
         qt = TopicModelDataPreparation(embedding_model, max_seq_length=max_seq_length)
         training_dataset = qt.fit(text_for_contextual=unpreprocessed, text_for_bow=preprocessed)
